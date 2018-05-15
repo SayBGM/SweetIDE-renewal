@@ -1,0 +1,10 @@
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+body {
+  margin: 0;
+  background-color: #fafafa;
+  font-family:'NanumSquare';
+  font-size: 16px;
+}
+.IDE {
+  padding: 10px;
+}

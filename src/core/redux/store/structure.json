@@ -1,0 +1,32 @@
+{
+  "authToken": {
+    "tokenValue": "12345678"
+  },
+  "userInfo": {
+    "userName": "mint98ff98",
+    "groupInfo": {
+      "groupId": "1001",
+      "groupName": "DSM"
+    },
+    "planInfo": {
+      "minUploadLatency" : 10
+    }
+  },
+  "projectInfo": {
+    "projectType": "SWEET_CLIKE",
+    "projectId": "91006",
+    "projectName": "HelloWorld!",
+    "code": "",
+    "lastUploadedTime": 1515640471
+  },
+  "uiStatus": {
+    "showCenterContentSpinner" : false,
+    "showFullSpinner" : false
+  },
+  "sweetIdeSettings" : {
+    "useAutoSave" : true,
+    "colorTheme" : "mbo",
+    "font" : "nanumGothicCoding",
+    "fontSize" : 10
+  }
+}

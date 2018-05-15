@@ -1,0 +1,11 @@
+.ideNavigator{
+  height: 5vh;
+  background-color: #ffffff;
+  border: solid 0.3px #979797;
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
