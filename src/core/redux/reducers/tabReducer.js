@@ -1,5 +1,5 @@
 import { EDITING_TAB_ADD, EDITING_TAB_REMOVE } from './../actions/types'
-import codeReducer from './codeReducer'
+
 const initialState = {
   Tabs: [{
     name: 'demo.sweet',

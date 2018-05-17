@@ -1,0 +1,26 @@
+.Tabbox{
+  position: relative;
+  display: inline-block;
+  width: 18%;
+  height: 50px;
+  border: solid 0.3px #979797;
+  border-bottom: transparent;
+  top:0.4px;
+}
+.Tabbox__content{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding-left: 10%;
+  font-size: 18px;
+}
+.TabBox--true{
+  background-color: #fff;
+  height: 50.1px;
+}
+
+.TabBox--false{
+  background-color: #fafafa;
+  top:0.3px;
+}
