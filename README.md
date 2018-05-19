@@ -13,10 +13,14 @@
 
 - 파일 디렉토리 구조
   - src
-    - sweet
+    - sweetide
       - code editing
-      - library
-      - project file
+        - CodeMirror
+        - Tab box
+        - Tools
+      - Explore Bar
+        - library
+        - project file
       - serial moniter
     - core
       - basic Component
@@ -24,13 +28,3 @@
         - actions
         - reducers
         - store
-
-- 컴포넌트 구조
-  - IDENavigator
-  - CodeEditing
-    - FileTab
-    - CodeMirror
-  -  ProjectFile
-    - ProjectDirectory
-  - library
-  - SerialMoniter
