@@ -1,4 +1,14 @@
 .SeiralMoniter{
   margin-top: 10px;
-  
+  display:block;
+  width : calc(100%);
+  height : 42.5vh;
+  border:solid 0.3px #979797;
+  padding: 10px;
+  background-color: #FFF;
+}
+.SeiralMoniter__panel{
+  width: 100%;
+  height: 90%;
+  background-color: #1d1d1d;
 }

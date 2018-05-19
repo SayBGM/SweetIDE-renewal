@@ -13,10 +13,16 @@ export default class SeiralMoniter extends React.Component{
   render(){
     const socket = socketIOClient(this.state.endpoint);
     socket.on('Seiral Console', (text) => {
+      document.getElementById("panel").innerHTML(text+"<br/>");
     })
     return (
-      <div className="SeiralMoniter" style={{display:'inline-block', width : 'calc(100% - 410px)', height : '40vh', border:'solid 0.3px #979797'}}>
-        <Icons icon="desktop" margin='5px'/>시리얼 모니터
+      <div className="SeiralMoniter">
+        <div style={{display:'flex', width:'100%', marginBottom:'10px',  alignItems:'center'}}>
+          <Icons icon="desktop" margin='5px'/>
+          시리얼 모니터
+        </div>
+        <div id="panel" className="SeiralMoniter__panel">
+        </div>
       </div>
     )
   }
