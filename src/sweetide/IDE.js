@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
 import IdeNavigator from '../core/basicComponent/IdeNavigator'
-import ExploreBar from './explore_bar/explore_bar'
+import ExploreBar from './ExploreBar/ExploreBar'
 import CodeEditing from './CodeEditing/CodeEditing'
 import './IDE.css';
 

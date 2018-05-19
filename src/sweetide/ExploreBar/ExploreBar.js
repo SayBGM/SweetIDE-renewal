@@ -1,6 +1,6 @@
 import React from 'react';
-import ProjectFile from '../project_file/ProjectFile'
-import LibraryExplore from '../library/library_explore'
+import ProjectFile from './ProjectFile/ProjectFile'
+import LibraryExplore from './Library/LibraryExplore'
 
 export default class ExploreBar extends React.Component {
   render(){

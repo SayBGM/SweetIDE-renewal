@@ -1,5 +1,5 @@
 import React from 'react';
-import Icons from '../../core/basicComponent/Icons'
+import Icons from '../../../core/basicComponent/Icons'
 import ProjectDirectory from './ProjectDirectory'
 import './css/ProjectFile.css'
 
