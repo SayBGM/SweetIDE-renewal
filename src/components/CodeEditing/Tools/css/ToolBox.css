@@ -1,8 +1,7 @@
-.ToolBox{
-  display: inline;
+.Tools{
   float: right;
 }
-.ToolBox__{
+.ToolBox{
   position: relative;
   top:0.3px;
   display: inline-flex;

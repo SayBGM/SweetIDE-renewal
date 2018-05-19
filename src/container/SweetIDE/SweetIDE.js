@@ -1,10 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import Proptypes from 'prop-types'
-import IdeNavigator from '../../components/basicComponent/IdeNavigator'
-import ExploreBar from '../../components/ExploreBar/ExploreBar'
-import CodeEditing from '../../components/CodeEditing/CodeEditing'
+import { connect } from 'react-redux';
+import Proptypes from 'prop-types';
+import IdeNavigator from '../../components/basicComponent/IdeNavigator';
+import ExploreBar from '../../components/ExploreBar/ExploreBar';
+import CodeEditing from '../../components/CodeEditing/CodeEditing';
 import './SweetIDE.css';
+import './../../components/basicComponent/css/error.css';
 
 class SweetIDE extends React.Component {
   render() {
