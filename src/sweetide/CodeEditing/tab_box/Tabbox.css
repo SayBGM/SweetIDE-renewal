@@ -5,7 +5,7 @@
   height: 50px;
   border: solid 0.3px #979797;
   border-bottom: transparent;
-  top:0.4px;
+  top: 1px;
 }
 .Tabbox__content{
   display: flex;

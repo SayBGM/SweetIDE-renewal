@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SweetMain from './sweet/IDE';
+import SweetMain from './sweetide/IDE';
 import { Provider } from 'react-redux';
 
 import {store} from './core/redux/store/createStore'

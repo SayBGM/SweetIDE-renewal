@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeMirrorCPP from './CodeMirrorCPP'
+import CodeMirrorCPP from './CodeMirror/CodeMirrorCPP'
 import EditingContainer from './EditingContainer'
 
 export default class CodeEditing extends React.Component{

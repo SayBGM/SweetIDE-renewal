@@ -6,5 +6,4 @@ export default class Icons extends React.Component{
       <i className={`fas fa-${this.props.icon}`} style={{fontSize:'20px', marginRight: this.props.margin}}/>
     )
   }
-  
 }

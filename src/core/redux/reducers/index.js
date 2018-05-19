@@ -5,10 +5,10 @@ import codeReducer from './codeReducer'
 import tabReducer from './tabReducer'
 
 const reducers = combineReducers({
-  userInfo:userReducer,
-  projectInfo:projectReducer,
-  codeInfo:codeReducer,
-  tabInfo:tabReducer
+  userReducer,
+  projectReducer,
+  codeReducer,
+  tabReducer
 });
 
 export default reducers;

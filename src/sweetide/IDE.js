@@ -1,18 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
 import IdeNavigator from '../core/basicComponent/IdeNavigator'
 import ExploreBar from './explore_bar/explore_bar'
-import CodeEditing from './code_editing/CodeEditing'
+import CodeEditing from './CodeEditing/CodeEditing'
 import './IDE.css';
 
-class SweetMain extends Component {
+class SweetMain extends React.Component {
   render() {
     const {projectName, userName} = this.props
     return (
       <div className="App">
         <IdeNavigator projectName={projectName} userName={userName}/>
-        <div className="IDE">
+        <div className="IDE" style={{height:'calc( 95vh - 25px )'}}>
           <ExploreBar />
           <CodeEditing />
         </div>
@@ -27,11 +27,11 @@ SweetMain.Proptypes = {
   userName: Proptypes.string.isRequired
 }
 
-function navPropsMaping(state){
+function mapStateToProps(state){
   return{
-    projectName: state.projectInfo.projectName,
-    userName: state.userInfo.userName
+    projectName: state.projectReducer.projectName,
+    userName: state.userReducer.userName
   }
 }
 
-export default connect(navPropsMaping)(SweetMain)
+export default connect(mapStateToProps)(SweetMain)
