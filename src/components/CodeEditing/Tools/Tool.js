@@ -1,6 +1,6 @@
 import React from 'react';
-import ToastUtils from './../../../core/utils/toaster/ToastUtils'
-import Icons from './../../../core/basicComponent/Icons'
+import ToastUtils from '../../../core/utils/toaster/ToastUtils'
+import Icons from '../../basicComponent/Icons'
 import './css/Tool.css'
 
 export default class Tool extends React.Component{

@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Proptypes from 'prop-types'
-import IdeNavigator from '../core/basicComponent/IdeNavigator'
-import ExploreBar from './ExploreBar/ExploreBar'
-import CodeEditing from './CodeEditing/CodeEditing'
-import './IDE.css';
+import IdeNavigator from '../../components/basicComponent/IdeNavigator'
+import ExploreBar from '../../components/ExploreBar/ExploreBar'
+import CodeEditing from '../../components/CodeEditing/CodeEditing'
+import './SweetIDE.css';
 
-class SweetMain extends React.Component {
+class SweetIDE extends React.Component {
   render() {
     const {projectName, userName} = this.props
     return (
@@ -22,7 +22,7 @@ class SweetMain extends React.Component {
   }
 }
 
-SweetMain.Proptypes = {
+SweetIDE.Proptypes = {
   projectName: Proptypes.string.isRequired,
   userName: Proptypes.string.isRequired
 }
@@ -34,4 +34,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps)(SweetMain)
+export default connect(mapStateToProps)(SweetIDE)

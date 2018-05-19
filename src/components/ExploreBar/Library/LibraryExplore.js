@@ -1,5 +1,5 @@
 import React from 'react';
-import Icons from './../../../core/basicComponent/Icons'
+import Icons from '../../basicComponent/Icons'
 import './css/library_explore.css'
 
 export default class LibraryExplore extends React.Component{

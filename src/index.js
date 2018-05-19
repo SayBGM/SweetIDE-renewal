@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SweetMain from './sweetide/IDE';
+import SweetIDE from './container/SweetIDE/SweetIDE';
 import { Provider } from 'react-redux';
 
 import {store} from './core/redux/store/createStore'
@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <SweetMain/>
+    <SweetIDE/>
   </Provider>
   , document.getElementById('root')
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TabBox from './tab_box/TabBox';
+import TabBox from './TabBox/TabBox';
 import ToolBox from './Tools/ToolBox'
 
 export default class CenterContainer extends React.Component{

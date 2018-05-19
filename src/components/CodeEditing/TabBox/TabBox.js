@@ -1,9 +1,9 @@
 import React from 'react';
-import Icons from './../../../core/basicComponent/Icons';
+import Icons from '../../basicComponent/Icons';
 
 import './Tabbox.css';
 
-export default class Tabbox extends React.Component{
+export default class TabBox extends React.Component{
   render(){
     return (
       <div className={`Tabbox TabBox--${this.props.isEdit}`}>
