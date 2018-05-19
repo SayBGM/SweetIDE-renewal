@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { changeSweetCode } from './../../../core/redux/actions/codeActions';
 
 
-import './../css/editorFont.css';
-import './../css/hint.css';
+import './css/editorFont.css';
+import './css/hint.css';
 
 class CodeMirrorCPP extends React.Component {
   render() {
