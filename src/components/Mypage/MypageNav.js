@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Proptypes from 'prop-types';
 import MypageNavBtn from './MypageNavBtn';
 import './css/mypageNav.css';
 
@@ -35,6 +36,11 @@ class MypageNav extends Component {
                            handelClickEevent = {this.props.handelClickEevent} />
     })
   }
+}
+
+MypageNav.Proptypes = {
+  mode: Proptypes.number.isRequired,
+  handelClickEevent: Proptypes.func.isRequired
 }
 
 export default MypageNav;

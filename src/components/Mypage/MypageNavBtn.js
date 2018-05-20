@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 import './css/mypageNav.css';
 
 const MypageNavBtn = ({ isSelected, text, handelClickEevent, index }) => {
@@ -12,6 +13,13 @@ const MypageNavBtn = ({ isSelected, text, handelClickEevent, index }) => {
       {renderSelectedLine()}
     </div>
   )
+}
+
+MypageNavBtn.Proptypes = {
+  isSelected: Proptypes.bool.isRequired,
+  text: Proptypes.text.isRequired,
+  handelClickEevent: Proptypes.func.isRequired,
+  inde: Proptypes.number.isRequired
 }
 
 export default MypageNavBtn;
