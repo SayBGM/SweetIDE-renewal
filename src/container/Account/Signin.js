@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import AccountTitle from '../../components/auth/common/AccountTitle';
-import SigninInputWrapper from '../../components/auth/signin/SigninInputWrapper';
-import SigninSubBtnWrapper from '../../components/auth/signin/SigninSubBtnWrapper'; 
+import AccountTitle from '../../components/Account/common/AccountTitle';
+import SigninInputWrapper from '../../components/Account/signin/SigninInputWrapper';
+import SigninSubBtnWrapper from '../../components/Account/signin/SigninSubBtnWrapper'; 
 import './signin.css';
 
 class Signin extends Component {
