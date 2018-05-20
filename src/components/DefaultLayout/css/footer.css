@@ -1,6 +1,7 @@
 #footer-section {
+  font-family:'NanumSquare';
   width: 100%;
-  background: url('../../assets/image/footer/background.jpg');
+  background: url('../../../assets/image/footer/background.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -36,21 +37,21 @@
 }
 
 .twitter {
-  background: url('../../assets/image/footer/social-twitter-button.png');
+  background: url('../../../assets/image/footer/social-twitter-button.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .facebook {
-  background: url('../../assets/image/footer/social-facebook-button.png');
+  background: url('../../../assets/image/footer/social-facebook-button.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .instargram {
-  background: url('../../assets/image/footer/social-instargram-button.png');
+  background: url('../../../assets/image/footer/social-instargram-button.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; 
