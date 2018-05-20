@@ -3,6 +3,6 @@
   height: calc(100% - 30px);
   background-color: #fafafa;
   border: solid 1px #979797;
-  padding: 10px;
+  padding: 10px 10px 10px 0px;
   overflow-y: auto;
 }

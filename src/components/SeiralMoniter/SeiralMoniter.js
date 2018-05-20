@@ -11,10 +11,10 @@ export default class SeiralMoniter extends React.Component{
     };
   }
   render(){
-    const socket = socketIOClient(this.state.endpoint);
+    /*const socket = socketIOClient(this.state.endpoint);
     socket.on('Seiral Console', (text) => {
       document.getElementById("panel").innerHTML(text+"<br/>");
-    })
+    })*/
     return (
       <div className="SeiralMoniter">
         <div style={{display:'flex', width:'100%', marginBottom:'10px',  alignItems:'center'}}>

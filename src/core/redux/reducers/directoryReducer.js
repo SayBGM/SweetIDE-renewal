@@ -1,79 +1,60 @@
 const initialState = 
   [{
     name :"base",
-    type : "directory",
+    isFile: false,
     subdirectory : [
       {
-        filename:"test.sweet"
+        filename:"test.sweet",
+        isFile: true
       }, 
       {
-        filename:"demo.sweet"
+        filename:"demo.sweet",
+        isFile: true
       },
       {
-        filename:"led_banzzack.sweet"
+        filename:"led_banzzack.sweet",
+        isFile: true
       }
     ]
   },
   {
   name: "base2",
-  type : "directory",
+  isFile: false,
   subdirectory : [
     {
-      filename:"test.sweet"
+      filename:"test.sweet",
+      isFile: true
     },
     {
-      filename:"demo.sweet"
+      filename:"demo.sweet",
+      isFile: true
     },
     {
       name: "subfolder",
-      type : "directory",
+      isFile: false,
       subdirectory : [
         {
-        filename: "yeah.sweet"
+        filename: "yeah.sweet",
+        isFile: true
         },
         {
-          name: "subfolder",
-          type : "directory",
+          name: "subfolder2",
+          isFile: false,
           subdirectory : [
             {
-            filename: "yeah.sweet"
+            filename: "yeah.sweet",
+            isFile: true
             },
             {
-              name :"base",
-              type : "directory",
-              subdirectory : [
-                {
-                  filename:"test.sweet"
-                }, 
-                {
-                  filename:"demo.sweet"
-                },
-                {
-                  filename:"led_banzzack.sweet"
-                }
-              ]
-            },{
-              name :"base",
-              type : "directory",
-              subdirectory : [
-                {
-                  filename:"test.sweet"
-                }, 
-                {
-                  filename:"demo.sweet"
-                },
-                {
-                  filename:"led_banzzack.sweet"
-                }
-              ]
+              filename: "jest.sweet",
+              isFile: true,
             }
-            
           ]
         }
       ]
     }
   ]
-}
+  }
 ]
 export default function DirectoryReducer(state=initialState, action){
   switch(action.type){
