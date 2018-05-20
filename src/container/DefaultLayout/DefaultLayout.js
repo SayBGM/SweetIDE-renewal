@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
+import Header from '../../components/DefaultLayout/Header';
+import Footer from '../../components/DefaultLayout/Footer';
 import './DefaultLayout.css';
 
 class DefaultLayout extends Component {
   render() {
     return (
       <React.Fragment>
-        <div id="header-section">
-
+        <Header/>
+        <div id="main-wrapper">
+          <div id="main-section">
+            {this.props.children}
+          </div>
         </div>
-        <div id="contents-section">
-          {this.props.children}
-        </div>
-        <div id="footer-section">
-
-        </div>
+        <Footer/>
       </React.Fragment>
     )
   }

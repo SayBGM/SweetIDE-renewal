@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SweetIDE from './container/SweetIDE/SweetIDE';
 import DefaultLayout from './container/DefaultLayout/DefaultLayout';
+import Signin from './container/auth/Signin';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -13,7 +14,11 @@ ReactDOM.render(
       <Switch>
         <Route path='/ide' component={SweetIDE} exact/>
         <Route render={() => 
-          <DefaultLayout/>
+          <DefaultLayout>
+            <Switch>
+              <Route path="/signin" component={Signin} exact />
+            </Switch>
+          </DefaultLayout>
         } />
       </Switch>
     </Router>

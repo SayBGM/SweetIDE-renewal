@@ -1,0 +1,13 @@
+
+#footer-wrapper {
+  width: 100%;
+  height: 350px;
+  background-color: #ffffff;
+}
+
+#footer-section {
+  width: 980px;
+  height: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 20px 10px;
+}
