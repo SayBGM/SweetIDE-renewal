@@ -1,45 +1,52 @@
-const initialState = {
+const initialState = 
+  [{
     name :"base",
     type : "directory",
     subdirectory : [
       {
-        name:"test",
-        type:".sweet"
+        filename:"test.sweet"
       }, 
       {
-        name:"demo",
-        type:".sweet"
+        filename:"demo.sweet"
       },
       {
-        name:"led_banzzack",
-        type:".sweet"
+        filename:"led_banzzack.sweet"
       }
-  ],
-  name : "base2",
+    ]
+  },
+  {
+  name: "base2",
   type : "directory",
-    subdirectory : [
+  subdirectory : [
     {
-      name:"test",
-      type:".sweet"
+      filename:"test.sweet"
     },
     {
-      name:"demo",
-      type:".sweet"
+      filename:"demo.sweet"
     },
     {
-        name: "subfolder",
-        type : "directory",
-        subdirectory : [
+      name: "subfolder",
+      type : "directory",
+      subdirectory : [
         {
-          name: "yeah",
-          type : ".sweet"
+        filename: "yeah.sweet"
+        },
+        {
+          name: "subfolder",
+          type : "directory",
+          subdirectory : [
+            {
+            filename: "yeah.sweet"
+            },
+            
+          ]
         }
-        ]
+      ]
     }
   ]
 }
-
-function DirectoryReducer(state=initialState, action){
+]
+export default function DirectoryReducer(state=initialState, action){
   switch(action.type){
     default:
       return state;

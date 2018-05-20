@@ -3,4 +3,5 @@
   height: calc(100% - 30px);
   background-color: #fafafa;
   border: solid 0.3px #979797;
+  padding: 10px;
 }
