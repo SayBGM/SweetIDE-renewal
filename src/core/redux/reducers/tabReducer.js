@@ -1,15 +1,17 @@
-import { EDITING_TAB_ADD, EDITING_TAB_REMOVE } from './../actions/types'
+import { EDITING_TAB_ADD, EDITING_TAB_REMOVE,EDITING_TAB_CHANGE } from './../actions/types'
 
 const initialState = {
   Tabs: [{
     name: 'demo.sweet',
-    code: '#include <stdio.h> int main (void)',
-    isSave : false
+    code: '#include <stdio.h>\n int main (void)',
+    isSave : false,
+    isEdit : false
   },
   {
     name: 'test.sweet',
-    code: 'let scoding = "Wakanda forever"',
-    isSave : true
+    code: '#include <stdio.h>\n\tint main (void){\n\tString scoding = "Wakanda forever"\n}',
+    isSave : true,
+    isEdit : true
   }
   ]
 }
@@ -21,9 +23,19 @@ export default function tabReducer(state=initialState, action){
     }
     case EDITING_TAB_REMOVE:
       return SaveCheck(state, action.SelectTabNum)
+
+    case EDITING_TAB_CHANGE:
+      state.Tabs.map((Tab) => {
+        if(Tab.name === action.SelectTabName){
+          Tab.isEdit = true
+        }
+        else{
+          return Tab.isEdit = false
+        }
+      })
+      return;
     default:
-      return state;
-      
+      return state;  
   }
 }
 function SaveCheck (state, SelectTabNum){
@@ -31,5 +43,5 @@ function SaveCheck (state, SelectTabNum){
     return state.Tabs.splice(SelectTabNum,1)
   }else{
     return state
-  }
+  } 
 }
