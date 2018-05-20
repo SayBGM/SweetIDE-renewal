@@ -5,23 +5,19 @@
   border-radius: 5px;
   background-color: #ffffff;
   border: solid 1px #634c28;
-  color: #634c28;
   padding: 5px 20px;
   font-size: 10px;
 }
 
 .contents-input::placeholder {
-  color: #8d816b;
   font-size: 10px;
 }
 
 .contents-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #8d816b;
   font-size: 10px;
 }
 
 .contents-input::-ms-input-placeholder { /* Microsoft Edge */
-  color: #8d816b;
   font-size: 10px;
 }
 

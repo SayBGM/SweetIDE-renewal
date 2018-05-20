@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import MypageNav from '../../components/Mypage/MypageNav';
+import MypageNav from '../../components/Mypage/MypageNav/MypageNav';
+import ProjectView from '../../components/Mypage/ProjectView/ProjectView';
+import ProjectManage from '../../components/Mypage/ProjectManage/ProjectManage';
 import './mypage.css';
 
 class Mypage extends Component {
@@ -11,6 +13,9 @@ class Mypage extends Component {
     return (
       <div id="mypage-section">
         <MypageNav mode = {this.state.mode} handelClickEevent = {this.handleNavClickEevent} />
+        <div id="mypage-contents">
+          {this.renderMypage()}
+        </div>
       </div>
     )
   }
@@ -20,6 +25,14 @@ class Mypage extends Component {
       mode: mode
     });
   }
-}
+
+  renderMypage = _ => {
+    switch(this.state.mode) {
+      case 0: return <ProjectView/>
+      case 1: return <ProjectManage/>
+      default: return;
+    }
+  }
+ }
 
 export default Mypage;

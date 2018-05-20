@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
 import MypageNavBtn from './MypageNavBtn';
-import './css/mypageNav.css';
+import '../css/mypageNav.css';
 
 class MypageNav extends Component {
   state = {

@@ -1,6 +1,16 @@
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
 #mypage-section {
+  box-sizing: border-box;
+  font-family:'NanumSquare';
+  color:#634c28;
   width: 100%;
   height: 100%;
   padding-top: 150px;
   background-color: #ffffff;
+}
+
+#mypage-contents {
+  width: 1000px;
+  height: 600px;
+  margin: 0 auto;
 }

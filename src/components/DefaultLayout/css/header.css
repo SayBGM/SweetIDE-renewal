@@ -16,9 +16,13 @@
 }
 
 #header-logo-btn {
-  width: 100px;
-  height: 100%;
-  background-color: #f6f7f9;
+  background: url('../../../assets/image/header/logo.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 10px 20px;
+  width: 110px;
+  height: calc(100% - 20px);
 }
 #header-text-btn-wrapper {
   height: 100%;

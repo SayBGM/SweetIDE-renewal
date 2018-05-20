@@ -1,6 +1,6 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import './css/mypageNav.css';
+import '../css/mypageNav.css';
 
 const MypageNavBtn = ({ isSelected, text, handelClickEevent, index }) => {
   const renderSelectedLine = _ => {
