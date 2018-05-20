@@ -38,6 +38,21 @@ const initialState =
             {
             filename: "yeah.sweet"
             },
+            {
+              name :"base",
+              type : "directory",
+              subdirectory : [
+                {
+                  filename:"test.sweet"
+                }, 
+                {
+                  filename:"demo.sweet"
+                },
+                {
+                  filename:"led_banzzack.sweet"
+                }
+              ]
+            },
             
           ]
         }
