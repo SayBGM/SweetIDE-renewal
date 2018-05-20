@@ -7,10 +7,12 @@ import './signin.css';
 class Signin extends Component {
   render() {
     return (
-      <div id="signin-wrapper">
-        <AccountTitle text="로그인"/>
-        <SigninInputWrapper/>
-        <SigninSubBtnWrapper/>
+      <div id="main-wrapper">
+        <div id="signin-wrapper">
+          <AccountTitle text="로그인"/>
+          <SigninInputWrapper/>
+          <SigninSubBtnWrapper/>
+        </div>
       </div>
     )
   }

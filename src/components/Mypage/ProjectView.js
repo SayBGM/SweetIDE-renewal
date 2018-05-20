@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './projectView.css';
+import './css/projectView.css';
 
 class ProjectView extends Component {
   render() {

@@ -23,8 +23,8 @@ class Header extends Component {
   }
 
   renderHeaderBtn = _ => {
-    return this.state.headerBtns.map(btn => {
-      return <div className="header-btn">{ btn }</div>
+    return this.state.headerBtns.map((btn, index) => {
+      return <div key={index} className="header-btn">{ btn }</div>
     });
   }
 }

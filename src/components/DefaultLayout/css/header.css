@@ -37,20 +37,20 @@
   cursor: pointer;
 }
 
-.header-btn:hover{
+.header-btn:hover {
   background-color: #f6f7f9;
 }
 
-#footer-company-rule div{
+#footer-company-rule div {
   margin-top: 10px;
 }
 
 @media all and (max-width: 1000px) {
-  .header-btn{
+  .header-btn {
     display: none;
   }
 
-  #login-btn {
+  .header-btn:last-child {
     display: inline-block;
   }
 

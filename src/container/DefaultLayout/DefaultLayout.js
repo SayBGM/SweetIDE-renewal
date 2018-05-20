@@ -9,9 +9,7 @@ class DefaultLayout extends Component {
       <React.Fragment>
         <Header/>
         <div id="main-section">
-          <div id="main-wrapper">
-            {this.props.children}
-          </div>
+          {this.props.children}
         </div>
         <Footer/>
       </React.Fragment>
