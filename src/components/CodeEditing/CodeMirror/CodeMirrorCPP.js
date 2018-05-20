@@ -13,7 +13,7 @@ class CodeMirrorCPP extends React.Component {
       <div style={{border: 'solid 1px #979797'}}>
         <CodeMirror
             value={this.props.codeInfo} 
-            onChange={(editer, data, value) => {this.props.changeSweetCode(editer)}}
+            onChange={(editer, data, value) => {this.props.changeSweetCode(value)}}
             options={{
                 lineNumbers: true,
                 matchBrackets:true,
