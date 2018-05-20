@@ -17,7 +17,7 @@ const MypageNavBtn = ({ isSelected, text, handelClickEevent, index }) => {
 
 MypageNavBtn.Proptypes = {
   isSelected: Proptypes.bool.isRequired,
-  text: Proptypes.text.isRequired,
+  text: Proptypes.string.isRequired,
   handelClickEevent: Proptypes.func.isRequired,
   inde: Proptypes.number.isRequired
 }
