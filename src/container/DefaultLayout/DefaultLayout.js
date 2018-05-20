@@ -8,8 +8,8 @@ class DefaultLayout extends Component {
     return (
       <React.Fragment>
         <Header/>
-        <div id="main-wrapper">
-          <div id="main-section">
+        <div id="main-section">
+          <div id="main-wrapper">
             {this.props.children}
           </div>
         </div>

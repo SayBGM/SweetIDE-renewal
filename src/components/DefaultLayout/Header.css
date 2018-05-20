@@ -23,7 +23,7 @@
   height: 100%;
 }
 
-#filter {
+.filter {
   flex-grow: 1;
 }
 .header-btn {

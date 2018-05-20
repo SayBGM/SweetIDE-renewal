@@ -13,7 +13,7 @@ class Header extends Component {
           <div id="header-logo-btn">
 
           </div>
-          <div id="filter"></div>
+          <div className="filter"></div>
           <div id="header-text-btn-wrapper">
             {this.renderHeaderBtn()}
           </div>
