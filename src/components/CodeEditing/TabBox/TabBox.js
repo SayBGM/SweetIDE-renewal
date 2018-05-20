@@ -11,6 +11,7 @@ export default class TabBox extends React.Component{
         <Icons icon={'file'} margin="10px"/>
         <span>{this.props.fileName}</span>
         </div>
+        <span className='close'><Icons icon={'times'}/></span>
       </div>
     )
   }
