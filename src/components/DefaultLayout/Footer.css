@@ -16,6 +16,7 @@
 
 #footer-company-rule p {
   margin: 10px 0;
+  cursor: pointer;
 }
 
 #footer-social-btn-wrapper {
@@ -31,6 +32,7 @@
   height: 30px;
   margin: 40px 20px 20px 0;
   display: inline-block;
+  cursor: pointer;
 }
 
 .twitter {
