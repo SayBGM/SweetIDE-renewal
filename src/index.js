@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SweetIDE from './container/SweetIDE/SweetIDE';
-import DefaultLayout from './container/DefaultLayout/DefaultLayout';
-import Signin from './container/auth/Signin';
 import { Provider } from 'react-redux';
+import { store } from './core/redux/store/createStore';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { store } from './core/redux/store/createStore';
+import { SweetIDE, DefaultLayout, Signin } from './container/index';
 
 ReactDOM.render(
   <Provider store={store}>
