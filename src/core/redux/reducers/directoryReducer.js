@@ -5,15 +5,18 @@ const initialState =
     subdirectory : [
       {
         filename:"test.sweet",
-        isFile: true
+        isFile: true,
+        code: '#include <stdio.h>\nint main (void)',
       }, 
       {
         filename:"demo.sweet",
-        isFile: true
+        isFile: true,
+        code: '#include <stdio.h>\nint main (void)',
       },
       {
         filename:"led_banzzack.sweet",
-        isFile: true
+        isFile: true,
+        code: '#include <stdio.h>\nint main (void)',
       }
     ]
   },
@@ -23,11 +26,13 @@ const initialState =
   subdirectory : [
     {
       filename:"test.sweet",
-      isFile: true
+      isFile: true,
+      code: '#include <stdio.h>\nint main (void)',
     },
     {
       filename:"demo.sweet",
-      isFile: true
+      isFile: true,
+      code: '#include <stdio.h>\nint main (void)',
     },
     {
       name: "subfolder",
@@ -35,7 +40,8 @@ const initialState =
       subdirectory : [
         {
         filename: "yeah.sweet",
-        isFile: true
+        isFile: true,
+        code: '#include <stdio.h>\nint main (void)',
         },
         {
           name: "subfolder2",
@@ -43,11 +49,13 @@ const initialState =
           subdirectory : [
             {
             filename: "yeah.sweet",
-            isFile: true
+            isFile: true,
+            code: '#include <stdio.h>\nint main (void)',
             },
             {
               filename: "jest.sweet",
               isFile: true,
+              code: '#include <stdio.h>\nint main (void)',
             }
           ]
         }

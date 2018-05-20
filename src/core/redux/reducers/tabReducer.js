@@ -4,12 +4,14 @@ const initialState = {
   Tabs: [{
     name: 'demo.sweet',
     code: '#include <stdio.h> int main (void)',
-    isSave : false
+    isSave : false,
+    isEdit : false
   },
   {
     name: 'test.sweet',
     code: 'let scoding = "Wakanda forever"',
-    isSave : true
+    isSave : true,
+    isEdit : true
   }
   ]
 }
