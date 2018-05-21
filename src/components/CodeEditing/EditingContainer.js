@@ -34,7 +34,6 @@ class CenterContainer extends React.Component{
     }
     renderTabBox = _ => {
         const data = this.props.tabReducer.Tabs;
-        console.log(data);
         return data.map((tab, index) =>{
             const isEdit = this.state.EditingTab === index ? true : false;
             return <TabBox  key = {index}
