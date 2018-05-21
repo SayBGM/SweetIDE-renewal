@@ -7,12 +7,13 @@ import TabBox from './TabBox/TabBox';
 import ToolBox from './Tools/ToolBox';
 
 class CenterContainer extends React.Component{
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
+        this.state = {
+            EditingTab : 0,
+        }
     }
-    state = {
-        EditingTab : 0
-    }
+    
     render(){
         return(
             <div id='center' style={{width: 'calc( 100% - 410px )' , display:'inline-block', position:'relative', top: '-10px'}}>
@@ -32,13 +33,15 @@ class CenterContainer extends React.Component{
         });
     }
     renderTabBox = _ => {
-        return this.props.tabReducer.map((Tab, index) => {
+        const data = this.props.tabReducer.Tabs;
+        console.log(data);
+        return data.map((tab, index) =>{
             const isEdit = this.state.EditingTab === index ? true : false;
-            return <TabBox  key={index}
-                            index={index}
-                            fileName={Tab.name} 
-                            isEdit={isEdit}
-                            handelTabClickEevent={this.handelTabClickEevent}
+            return <TabBox  key = {index}
+                            index = {index}
+                            fileName = {tab.name} 
+                            isEdit = {isEdit}
+                            handelTabClickEevent = {this.handelTabClickEevent}
                             />
         })
     }
@@ -46,7 +49,7 @@ class CenterContainer extends React.Component{
 
 function mapStateToProps (state){
     return {
-        tabReducer : state.tabReducer.Tabs
+        tabReducer : state.tabReducer
     }
 }
 CenterContainer.Proptypes = {

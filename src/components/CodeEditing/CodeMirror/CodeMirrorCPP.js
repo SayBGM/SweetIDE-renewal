@@ -1,8 +1,7 @@
 import React from 'react';
 import { UnControlled as CodeMirror } from 'react-codemirror2'
 import { connect } from 'react-redux';
-import { changeSweetCode } from './../../../core/redux/actions/codeActions';
-
+import { changeSweetCode } from './../../../core/redux/actions/tabsAction';
 
 import './css/editorFont.css';
 import './css/hint.css';
@@ -13,7 +12,7 @@ class CodeMirrorCPP extends React.Component {
       <div style={{border: 'solid 1px #979797'}}>
         <CodeMirror
             value={this.props.codeInfo[this.props.SelectTab].code} 
-            onChange={(editer, data, value) => {this.props.changeSweetCode(value)}}
+            onChange={(editer, data, value) => {this.props.changeSweetCode(this.props.SelectTab, value)}}
             options={{
                 lineNumbers: true,
                 matchBrackets:true,
@@ -37,7 +36,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch){
     return {
-        changeSweetCode: (changedCode) => dispatch(changeSweetCode(changedCode))
+        changeSweetCode: (SelectTab, changedCode) => dispatch(changeSweetCode(SelectTab, changedCode))
     };
 }
 

@@ -1,4 +1,4 @@
-import { EDITING_TAB_ADD, EDITING_TAB_REMOVE } from './types'
+import { EDITING_TAB_ADD, CHANGE_SWEET_CODE, EDITING_TAB_REMOVE } from './types'
 
 export function EditingTabAdd(newTabsInfo){
   /*
@@ -10,9 +10,10 @@ export function EditingTabAdd(newTabsInfo){
   }
 }
 
-export function EditingTabRemove(SelectTabNum){
+export function changeSweetCode(SelectTab,changedCode){
   return {
-    type : EDITING_TAB_REMOVE,
-    SelectTabNum : SelectTabNum
+    type : CHANGE_SWEET_CODE,
+    SelectTab : SelectTab,
+    changedCode : changedCode
   }
 }

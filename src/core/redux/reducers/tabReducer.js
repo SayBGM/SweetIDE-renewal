@@ -1,17 +1,16 @@
-import { EDITING_TAB_ADD, EDITING_TAB_REMOVE } from './../actions/types'
+import { EDITING_TAB_ADD, EDITING_TAB_REMOVE, CHANGE_SWEET_CODE } from './../actions/types';
 
 const initialState = {
   Tabs: [{
     name: 'demo.sweet',
     code: '#include <stdio.h> int main (void)',
-    isSave : false,
-    isEdit : false
+    isSave : false
+
   },
   {
     name: 'test.sweet',
     code: 'let scoding = "Wakanda forever"',
-    isSave : true,
-    isEdit : true
+    isSave : true
   }
   ]
 }
@@ -21,17 +20,13 @@ export default function tabReducer(state=initialState, action){
       return {...state,
       Tabs: [...state.Tabs, action.newTabsInfo]
     }
-    case EDITING_TAB_REMOVE:
-      return SaveCheck(state, action.SelectTabNum)
+    case CHANGE_SWEET_CODE:
+      return {
+        ...state,
+        Tabs : state.Tabs.map((Tab, index) => index === action.SelectTab ? {...Tab, code : action.changedCode} : Tab)
+      }
     default:
       return state;
       
-  }
-}
-function SaveCheck (state, SelectTabNum){
-  if(state.Tabs[SelectTabNum].isSave){
-    return state.Tabs.splice(SelectTabNum,1)
-  }else{
-    return state
   }
 }
