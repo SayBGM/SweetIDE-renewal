@@ -9,10 +9,10 @@ import './css/hint.css';
 
 class CodeMirrorCPP extends React.Component {
   render() {
-    const tablist = this.props.codeInfo.map((Tab) => {
-        if(Tab.isEdit){
-            return (<CodeMirror
-            value={Tab.code} 
+      return (
+      <div style={{border: 'solid 1px #979797'}}>
+        <CodeMirror
+            value={this.props.codeInfo[this.props.SelectTab].code} 
             onChange={(editer, data, value) => {this.props.changeSweetCode(value)}}
             options={{
                 lineNumbers: true,
@@ -25,15 +25,7 @@ class CodeMirrorCPP extends React.Component {
                 theme: "idea",
                 mode: 'cpp'
             }}
-        />)
-        }
-        else if(!Tab.isEdit){
-            return ''
-        }
-    })
-      return (
-      <div style={{border: 'solid 1px #979797'}}>
-        {tablist}
+        />
     </div>)
 }
 }

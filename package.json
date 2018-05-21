@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "codemirror": "^5.37.0",
     "forever": "^0.15.3",
+    "immutable": "^3.8.2",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",

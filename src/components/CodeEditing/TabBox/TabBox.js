@@ -6,8 +6,8 @@ import './Tabbox.css';
 export default class TabBox extends React.Component{
   render(){
     return (
-      <div className={`Tabbox TabBox--${this.props.isEdit}`}>
-        <div className={'Tabbox__content'}>
+      <div className={`Tabbox TabBox--${this.props.isEdit}`} onClick={_ => this.props.handelTabClickEevent(this.props.index)}>
+        <div className={'Tabbox__content'} >
         <Icons icon={'file'} margin="10px"/>
         <span>{this.props.fileName}</span>
         </div>
