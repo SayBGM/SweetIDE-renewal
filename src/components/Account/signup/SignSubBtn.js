@@ -6,7 +6,7 @@ const SignupSubBtn = ({ name, text }) => {
   return (
     <div className="signup-sub-btn" id={name}>
       <input type="checkbox" className={'check-box'} id={name+'check'} name={name} />
-      <label for={name+'check'} className="check-box"></label>
+      <label htmlFor={name+'check'} className="check-box"></label>
       <span 
         onClick={
           () => (document.getElementById(name+'check').checked)? 
