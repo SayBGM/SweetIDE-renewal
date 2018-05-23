@@ -1,0 +1,11 @@
+.contents-input-right{
+  background-color: #fafff3;
+  border: solid 1px #3f9334;
+  color: #48993e;
+}
+
+.contents-input-wrong{
+  background-color: #fff9f9;
+  border: solid 1px #d34444;
+  color: #d34444;
+}

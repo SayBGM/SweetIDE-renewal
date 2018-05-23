@@ -7,7 +7,7 @@ export default class Tool extends React.Component{
   render() {
     return (
       <div className="Tool" onClick={this._showToast}>
-        <Icons icon={this.props.tool} />
+        <Icons icon={this.props.tool} fontsize="20px"/>
       </div>
     )
   }
