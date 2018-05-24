@@ -11,6 +11,7 @@
 }
 
 .project-detail-card {
+  box-sizing: border-box;
   width: 500px;
   height: 100%;
   border: solid 0.3px rgba(169,157,137, 0.9);
@@ -50,6 +51,7 @@
 }
 
 .project-card {
+  box-sizing: border-box;
   height: 140px;
   margin-right: 20px;
   border: solid 0.3px rgba(169,157,137, 0.9);

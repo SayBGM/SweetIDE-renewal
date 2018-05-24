@@ -55,8 +55,5 @@
 
 .selected-nav-btn {
   width: 100px;
-  height: 1px;
   border: solid 1px #ffd800;
-  position: relative;
-  top: -2px;
 }

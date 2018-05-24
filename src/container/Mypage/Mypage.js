@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MypageNav from '../../components/Mypage/MypageNav/MypageNav';
 import ProjectView from '../../components/Mypage/ProjectView/ProjectView';
-import ProjectManage from '../../components/Mypage/ProjectManage/ProjectManage';
+import GroupManage from '../../components/Mypage/GroupManage/GroupManage';
 import './mypage.css';
 
 class Mypage extends Component {
@@ -29,7 +29,9 @@ class Mypage extends Component {
   renderMypage = _ => {
     switch(this.state.mode) {
       case 0: return <ProjectView/>
-      case 1: return <ProjectManage/>
+
+      case 1: return <GroupManage/>
+      
       default: return;
     }
   }
