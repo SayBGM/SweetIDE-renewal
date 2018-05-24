@@ -18,8 +18,6 @@ export default class InputTextCheck extends React.Component{
     const emailReg = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,5}$/i
     const inputtype = this.props.inputtype;
     let value = document.getElementById(inputtype).value;
-    console.log(inputtype+"  "+value);
-    console.log(idReg.test(value));
     switch(inputtype){
       case 'id': 
         if(idReg.exec(value)){
