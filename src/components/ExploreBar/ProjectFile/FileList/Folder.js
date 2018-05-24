@@ -14,7 +14,7 @@ export default class Folder extends React.Component{
     })
     return (
       <div className="Folder" style={{marginLeft:'20px'}}>
-        <span style={{color:"#777777"}}><Icons icon="folder-open" margin="4px"/></span>{this.props.folder.name}
+        <span style={{color:"#777777"}}><Icons icon="folder-open" margin="4px" fontsize="20pz"/></span>{this.props.folder.name}
         {filedirectory}
       </div>
     )

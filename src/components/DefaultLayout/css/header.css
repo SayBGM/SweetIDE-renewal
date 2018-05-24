@@ -5,6 +5,7 @@
   background-color: #ffffff;
   box-shadow: 0 5px 5px 0 rgba(234, 234, 234, 0.35);
   position: fixed;
+  z-index: 5;
 }
 
 #header-contents-wrapper {

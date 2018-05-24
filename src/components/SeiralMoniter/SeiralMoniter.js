@@ -18,7 +18,7 @@ export default class SeiralMoniter extends React.Component{
     return (
       <div className="SeiralMoniter">
         <div style={{display:'flex', width:'100%', marginBottom:'10px',  alignItems:'center'}}>
-          <Icons icon="desktop" margin='5px'/>
+          <Icons icon="desktop" margin='5px' fontsize="20px"/>
           시리얼 모니터
         </div>
         <div id="panel" className="SeiralMoniter__panel">

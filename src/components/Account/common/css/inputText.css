@@ -1,3 +1,10 @@
+.contents-inputname{
+  margin-top: 10px;
+  margin-left: 13px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
 .contents-input{
   width: calc(100% - 40px);
   height: 35px;
@@ -11,14 +18,21 @@
 
 .contents-input::placeholder {
   font-size: 10px;
+  font-family: 'NanumSquare';
 }
 
 .contents-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
   font-size: 10px;
+  font-family: 'NanumSquare';
 }
 
 .contents-input::-ms-input-placeholder { /* Microsoft Edge */
   font-size: 10px;
+  font-family: 'NanumSquare';
+}
+
+.contents-input[type="password"] {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .contents-input:focus {

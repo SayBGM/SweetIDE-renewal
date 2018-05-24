@@ -1,12 +1,12 @@
-#signin-wrapper {
-  width: 250px;
+#signup-wrapper {
+  width: 275px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   left: 50%;
-  top: 50%;
+  top: 45%;
   transform: translate(-50%, -50%);
 }
 

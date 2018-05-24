@@ -3,7 +3,11 @@ import Proptypes from 'prop-types';
 import './css/inputText.css';
 
 const InputText = ({ placeholder,type }) => {
-  return <input className="contents-input" type={type} placeholder={placeholder}/>
+  return (
+    <div className="cpmtents">
+      <input className="contents-input" type={type} placeholder={placeholder}/>
+    </div>
+  )
 }
 
 InputText.Proptypes = {
