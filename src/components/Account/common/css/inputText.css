@@ -6,7 +6,7 @@
 }
 
 .contents-input{
-  width: calc(100% - 40px);
+  width: 100%;
   height: 35px;
   margin: 2px 0;
   border-radius: 5px;
