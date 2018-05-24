@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../css/projectManage.css';
+import '../css/groupManage.css';
 
-class ProjectManage extends Component {
+class GroupManage extends Component {
   render() {
     return (
       <React.Fragment>
@@ -27,4 +27,4 @@ class ProjectManage extends Component {
   }
 }
 
-export default ProjectManage;
+export default GroupManage;
