@@ -3,31 +3,58 @@ import { UnControlled as CodeMirror } from 'react-codemirror2'
 import { connect } from 'react-redux';
 import { changeSweetCode } from './../../../core/redux/actions/tabsAction';
 
-import './css/editorFont.css';
+import './css/editor.css';
 import './css/hint.css';
 
 class CodeMirrorCPP extends React.Component {
-  render() {
+  render() { 
       // value때문인지는 모르겠으나 계속 커서가 뒤로 간다.
-      return (
+    return (
       <div style={{border: 'solid 1px #979797'}}>
-        <CodeMirror
-            value={this.props.codeInfo[this.props.SelectTab].code} 
-            onChange={(editer, data, value) => {this.props.changeSweetCode(this.props.SelectTab, value)}}
-            options={{
-                lineNumbers: true,
-                matchBrackets:true,
-                lineWrapping: true,
-                smartIndent: true,
-                tabSize: 4,
-                indentUnit: 4,
-                indentWithTabs: true,
-                theme: "idea",
-                mode: 'cpp'
-            }}
-        />
-    </div>)
+        {this.renderCodeMirror()}
+        </div>
+    )
 }
+    renderCodeMirror = () =>{
+        const setting = {
+            lineNumbers: true,
+            matchBrackets:true,
+            lineWrapping: true,
+            smartIndent: true,
+            tabSize: 4,
+            indentUnit: 4,
+            indentWithTabs: true,
+            theme: "idea",
+            mode: 'cpp'
+        }
+        const Editers = this.props.codeInfo;
+        console.log(Editers)
+        return Editers.map((Editer, index) => {
+            if(this.props.SelectTab === index){
+                return (
+                    <div id={`CodeMirrorEditer-index${index}`} className={`CodeMirror CodeMirrorEditer-open`} key={index}>
+                        <CodeMirror
+                            value={Editer.initialcode} 
+                            onChange={(editer, data, value) => {this.props.changeSweetCode(this.props.SelectTab, value)}}
+                            options={setting}
+                        />
+                    </div>
+                )
+            }
+            else{
+                return (
+                    <div id={`CodeMirrorEditer-index${index}`} className={`CodeMirror CodeMirrorEditer-close`} key={index}>
+                        <CodeMirror
+                            value={Editer.initialcode} 
+                            onChange={(editer, data, value) => {this.props.changeSweetCode(this.props.SelectTab, value)}}
+                            options={setting}
+                        />
+                    </div>
+                )
+            }  
+        })
+        return;
+    }
 }
 function mapStateToProps(state) {
     return{
