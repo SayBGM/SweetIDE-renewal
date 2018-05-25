@@ -28,7 +28,6 @@ class CodeMirrorCPP extends React.Component {
             mode: 'cpp'
         }
         const Editers = this.props.codeInfo;
-        console.log(Editers)
         return Editers.map((Editer, index) => {
             if(this.props.SelectTab === index){
                 return (

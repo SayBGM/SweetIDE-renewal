@@ -2,7 +2,6 @@ import React from 'react';
 import InputTextCheck from '../common/InputTextCheck';
 import AccountSubmitBtn from '../common/AccountSubmitBtn';
 import SignupSubBtnWrapper from './SignupSubBtnWrapper';
-import Icons from './../../basicComponent/Icons'
 import './css/signupInputWrapper.css';
 
 export default class SignupInputWrapper extends React.Component {

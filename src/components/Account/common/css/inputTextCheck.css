@@ -9,3 +9,23 @@
   border: solid 1px #d34444;
   color: #d34444;
 }
+
+.cpmtents-signup{
+  height: 70px;
+}
+
+.contents-icon{
+  position: relative;
+  text-align: right;
+  top: -30px ;
+  left: calc(100% - 40px);
+  width: 30px;
+}
+
+.fa-check {
+  color: #3f9334;
+}
+
+.fa-times{
+  color : #d34444;
+}
