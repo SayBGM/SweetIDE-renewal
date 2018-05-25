@@ -47,13 +47,15 @@
 }
 
 .mypage-nav-btn:hover {
+  box-sizing: border-box;
   background-color: #f6f7f9;
-  border: solid 0.3px rgba(169,157,137, 0.9);
-  border-left: 0;
-  border-right: 0;
+  border-top: solid 0.3px rgba(169,157,137, 0.9);
+  border-bottom: solid 0.3px rgba(169,157,137, 0.9);
 }
 
 .selected-nav-btn {
   width: 100px;
   border: solid 1px #ffd800;
+  position: relative;
+  top: -2px;
 }
