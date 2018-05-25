@@ -26,3 +26,11 @@
     height: 40vh;
     width: 100%;
 }
+
+.CodeMirrorEditer-open{
+    display: block;
+}
+
+.CodeMirrorEditer-close{
+    display: none;
+}

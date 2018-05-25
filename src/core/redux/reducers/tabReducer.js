@@ -3,12 +3,14 @@ import { EDITING_TAB_ADD, EDITING_TAB_REMOVE, CHANGE_SWEET_CODE } from './../act
 const initialState = {
   Tabs: [{
     name: 'demo.sweet',
-    code: '#include <stdio.h> int main (void)',
+    initialcode: '#include <stdio.h>\nint main (void){\n\tint i = 0;\n}',
+    code: '#include <stdio.h>\nint main (void){\tint i = 0;\n}',
     isSave : false
 
   },
   {
     name: 'test.sweet',
+    initialcode: 'let scoding = "Wakanda forever"',
     code: 'let scoding = "Wakanda forever"',
     isSave : true
   }
