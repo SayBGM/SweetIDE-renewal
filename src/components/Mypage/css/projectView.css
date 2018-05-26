@@ -8,6 +8,7 @@
   height: 300px;
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
 }
 
 .project-detail-card {
@@ -45,6 +46,7 @@
 #group-project-card-list {
   height: 140px;
   width: 100%;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -55,12 +57,41 @@
   height: 140px;
   margin-right: 20px;
   border: solid 0.3px rgba(169,157,137, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  background-color: rgba(102, 79, 44, 0.12);
+
 }
 
 .group-project {
-  flex-grow: 1;
+  width: 235px;
 }
 
 .group-project:last-child {
   margin-right: 0;
+}
+
+.project-title {
+  margin: 0;
+  text-align: center;
+}
+
+.project-type {
+  margin: 3px 0 0 0;
+  font-size: 14px;
+  text-align: center;
+  color: #664f2c;
+}
+
+#more-btn {
+  display: inline-block;
+  font-size: 13px;
+  margin-top: 10px;
+  float: right;
+  cursor: pointer;
 }
