@@ -12,30 +12,17 @@ class ListView extends Component {
 
   renderProject = _ => {
     const { projects } = this.props;
- 
-    if(this.props.isMore) {
-      return (
-        <div id="group-project-card-list">
-          {
-            projects.map(project => {
-              return(
-                <div className="project-card group-project" onClick={this.props.selectProject} key = {project.id}>
-                  <p className="project-title">{project.title}</p>
-                  <p className="project-type">{project.type}</p>
-                </div>
-              )
-            })
-          }
-        </div>
-      )
-    }
-    
+    let wrapperStyle = this.props.isMore ? 'group-project-card-list' : 'my-project-card-list';
     return (
-      <div id="my-project-card-list">
+      <div id = {wrapperStyle}>
         {
           projects.map(project => {
+            let cardStyle = 'project-card';
+            cardStyle += this.props.isMore ? ' group-project' : ' my-project';
+            cardStyle += this.props.selectedProject === project.id ? ' selected-project' : '';
+
             return(
-              <div className="project-card my-project" onClick={this.props.selectProject}>
+              <div className = {cardStyle} onClick={() => this.props.selectProject(project.id)} key = {project.id}>
                 <p className="project-title">{project.title}</p>
                 <p className="project-type">{project.type}</p>
               </div>
