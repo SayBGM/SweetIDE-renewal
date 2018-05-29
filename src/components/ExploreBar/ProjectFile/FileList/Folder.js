@@ -12,11 +12,11 @@ export default class Folder extends React.Component{
         return <File file={file.filename} highfolder={file.highfolder} key={file.filename}/>
       }
       else{
-        return <Folder folder={file} key={file.name}/>
+        return <Folder folder={file} highfolder={file.highfolder} key={file.name}/>
       }
     })
     return (
-      <div className="Folder" style={{marginLeft:'20px'}}>
+      <div className={`Folder`} style={{marginLeft:'20px'}}>
         <span 
           style={{color:"#777777", cursor:"pointer"}} 
           onClick={() => {
@@ -34,7 +34,9 @@ export default class Folder extends React.Component{
             }
             }}>
             <Icons icon="folder-open" margin="4px" fontsize="20px"/><span style={{color:"#000"}}>{this.props.folder.name}</span></span>
+        <div className={`${this.props.folder.name}-File`}>
         {filedirectory}
+        </div>
       </div>
     )
   }

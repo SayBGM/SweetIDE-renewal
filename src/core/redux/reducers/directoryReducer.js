@@ -42,6 +42,7 @@ const initialState =
     {
       name: "subfolder",
       isFile: false,
+      highfolder: "base2",
       subdirectory : [
         {
         filename: "yeah.sweet",
@@ -52,6 +53,7 @@ const initialState =
         {
           name: "subfolder2",
           isFile: false,
+          highfolder: "subfolder",
           subdirectory : [
             {
             filename: "yeah.sweet",
