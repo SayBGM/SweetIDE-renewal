@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './core/redux/store/createStore';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { SweetIDE, DefaultLayout, Signin, Signup, Mypage } from './container/index';
+import { SweetIDE, DefaultLayout, Signin, Signup, Verifi, Mypage } from './container/index';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -15,8 +15,9 @@ ReactDOM.render(
           <DefaultLayout>
             <Switch>
               <Route path="/signin" component={Signin} exact />
-              <Route path="/signup" component={Signup} exact/>
+              <Route path="/signup" component={Signup} exact />
               <Route path="/mypage" component={Mypage} exact />
+              <Route path="/verifi" component={Verifi} exact />
             </Switch>
           </DefaultLayout>
         } />

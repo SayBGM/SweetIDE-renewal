@@ -1,0 +1,14 @@
+.Verifi-Main{
+  width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+}
+.Verifi-wrapper{
+  font-family:'NanumSquare';
+  color:#634c28;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 150px 0px;
+}

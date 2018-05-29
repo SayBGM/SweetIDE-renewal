@@ -7,7 +7,7 @@ const SignInAnimation = _ => {
   const defaultOptions = {
     loop: true,
     autoplay: true, 
-    animationData: animationData
+    animationData: animationData,
   }
   return (
     <div id="signin-animation">
