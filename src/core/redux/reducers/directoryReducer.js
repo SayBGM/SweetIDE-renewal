@@ -7,16 +7,19 @@ const initialState =
         filename:"test.sweet",
         isFile: true,
         code: '#include <stdio.h>\nint main (void)',
+        highfolder: "base"
       }, 
       {
         filename:"demo.sweet",
         isFile: true,
         code: '#include <stdio.h>\nint main (void)',
+        highfolder: "base",
       },
       {
         filename:"led_banzzack.sweet",
         isFile: true,
         code: '#include <stdio.h>\nint main (void)',
+        highfolder: "base",
       }
     ]
   },
@@ -28,11 +31,13 @@ const initialState =
       filename:"test.sweet",
       isFile: true,
       code: '#include <stdio.h>\nint main (void)',
+      highfolder: "base2",
     },
     {
       filename:"demo.sweet",
       isFile: true,
       code: '#include <stdio.h>\nint main (void)',
+      highfolder: "base2",
     },
     {
       name: "subfolder",
@@ -42,6 +47,7 @@ const initialState =
         filename: "yeah.sweet",
         isFile: true,
         code: '#include <stdio.h>\nint main (void)',
+        highfolder: "subfolder",
         },
         {
           name: "subfolder2",
@@ -51,11 +57,13 @@ const initialState =
             filename: "yeah.sweet",
             isFile: true,
             code: '#include <stdio.h>\nint main (void)',
+            highfolder: "subfolder2",
             },
             {
               filename: "jest.sweet",
               isFile: true,
               code: '#include <stdio.h>\nint main (void)',
+              highfolder: "subfolder2",
             }
           ]
         }

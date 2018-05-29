@@ -10,7 +10,7 @@ class CenterContainer extends React.Component{
     constructor(){
         super();
         this.state = {
-            EditingTab : 0,
+            EditingTab : 1,
         }
     }
     

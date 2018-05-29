@@ -7,8 +7,7 @@ import './css/editor.css';
 import './css/hint.css';
 
 class CodeMirrorCPP extends React.Component {
-  render() { 
-      // value때문인지는 모르겠으나 계속 커서가 뒤로 간다.
+  render() {
     return (
       <div style={{border: 'solid 1px #979797'}}>
         {this.renderCodeMirror()}
