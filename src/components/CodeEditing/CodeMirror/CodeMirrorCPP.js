@@ -9,7 +9,7 @@ import './css/hint.css';
 class CodeMirrorCPP extends React.Component {
   render() {
     return (
-      <div style={{border: 'solid 1px #979797'}}>
+      <div style={{border: 'solid 1px #979797', height: '40vh', width: '100%'}}>
         {this.renderCodeMirror()}
         </div>
     )

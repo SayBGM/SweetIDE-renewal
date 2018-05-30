@@ -52,6 +52,9 @@ export const EDITING_TAB_ADD = 'EDITING_TAB_ADD';
 // TAB을 제거할 때 사용
 export const EDITING_TAB_REMOVE = 'EDITING_TAB_REMOVE';
 
+// TAB을 바꿀 때 사용
+export const EDITING_TAB_CHANGE = 'EDITING_TAB_CHANGE';
+
 /** code 액션 타입 모음 */
 
 //IDE 최초 로드시 코드미러에 프로젝트의 코드 데이터를 세팅하기 위해서 사용

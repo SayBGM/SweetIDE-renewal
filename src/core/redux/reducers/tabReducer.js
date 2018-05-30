@@ -1,6 +1,7 @@
-import { EDITING_TAB_ADD, EDITING_TAB_REMOVE, CHANGE_SWEET_CODE } from './../actions/types';
+import { EDITING_TAB_ADD, EDITING_TAB_REMOVE, EDITING_TAB_CHANGE, CHANGE_SWEET_CODE } from './../actions/types';
 
 const initialState = {
+  isOpen: 0,
   Tabs: [{
     name: 'demo.sweet',
     initialcode: '#include <stdio.h>\nint main (void){\n\tint i = 0;\n}',
@@ -13,6 +14,12 @@ const initialState = {
     initialcode: 'let scoding = "Wakanda forever"',
     code: 'let scoding = "Wakanda forever"',
     isSave : true
+  },
+  {
+    name: 'whatthe.sweet',
+    initialcode: 'let 우헤헿헤 = "Wakanda forever"',
+    code: 'let 우헤헿헤 = "Wakanda forever"',
+    isSave : true
   }
   ]
 }
@@ -22,6 +29,16 @@ export default function tabReducer(state=initialState, action){
       return {...state,
       Tabs: [...state.Tabs, action.newTabsInfo]
     }
+    case EDITING_TAB_REMOVE:
+        return{
+          ...state,
+          Tabs: state.Tabs.filter((Tab, index) => index !== action.SelectTab)
+        }
+    case EDITING_TAB_CHANGE:
+        return {...state,
+          isOpen : action.SelectTab
+        }
+      
     case CHANGE_SWEET_CODE:
       return {
         ...state,

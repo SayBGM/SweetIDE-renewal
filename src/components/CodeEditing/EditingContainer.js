@@ -5,23 +5,20 @@ import { connect } from 'react-redux';
 import SeiralMoniter from './../SeiralMoniter/SeiralMoniter';
 import TabBox from './TabBox/TabBox';
 import ToolBox from './Tools/ToolBox';
+import './css/EditingContainer.css'
 
-class CenterContainer extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            EditingTab : 1,
-        }
-    }
-    
+class EditingContainer extends React.Component{
     render(){
         return(
             <div id='center' style={{width: 'calc( 100% - 410px )' , display:'inline-block', position:'relative', top: '-10px'}}>
                     <span className='error'>현재 창 크기로는 정상적인 코드 에디팅이 불가능합니다. 창을 키워주세요.</span>
-                    {this.renderTabBox()}
-                    <ToolBox/>
+                    <div className="TabBox_Container">
+                        {this.renderTabBox()}
+                        <ToolBox/>
+                    </div>
+                        
                 <div id={'CodeEditBlock'} style={{padding: '10px'}}>
-                    <CodeMirrorCPP SelectTab={this.state.EditingTab}/>
+                    <CodeMirrorCPP SelectTab={this.props.tabReducer.isOpen}/>
                 </div>
                 <SeiralMoniter />
             </div>
@@ -35,7 +32,7 @@ class CenterContainer extends React.Component{
     renderTabBox = _ => {
         const data = this.props.tabReducer.Tabs;
         return data.map((tab, index) =>{
-            const isEdit = this.state.EditingTab === index ? true : false;
+            const isEdit = this.props.tabReducer.isOpen === index ? true : false;
             return <TabBox  key = {index}
                             index = {index}
                             fileName = {tab.name} 
@@ -51,7 +48,8 @@ function mapStateToProps (state){
         tabReducer : state.tabReducer
     }
 }
-CenterContainer.Proptypes = {
-    CenterContainer: Proptypes.func.isRequired
+
+EditingContainer.Proptypes = {
+    EditingContainer: Proptypes.func.isRequired
 }
-export default connect (mapStateToProps)(CenterContainer)
+export default connect (mapStateToProps)(EditingContainer)

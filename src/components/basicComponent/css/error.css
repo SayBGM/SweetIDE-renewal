@@ -16,7 +16,7 @@
     opacity: 0;
   }
 }
-@media (max-width: 1190px){
+@media (max-width: 1315px){
   .ToolBox{
     width: 70px;
   }
