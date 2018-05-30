@@ -13,6 +13,7 @@ const SignInAnimation = _ => {
     <div id="signin-animation">
         <Lottie 
           options={defaultOptions}
+          isClickToPauseDisabled={true}
         />
       </div>
   )
