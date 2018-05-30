@@ -5,6 +5,10 @@
   cursor: pointer;
 }
 
+.signin-sub-btn a {
+  text-decoration: none;
+}
+
 @-moz-keyframes dothabottomcheck {
   0% {
     height: 0;

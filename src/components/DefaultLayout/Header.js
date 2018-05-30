@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './css/header.css';
 
 class Header extends Component {
@@ -24,7 +25,11 @@ class Header extends Component {
 
   renderHeaderBtn = _ => {
     return this.state.headerBtns.map((btn, index) => {
-      return <div key={index} className="header-btn">{ btn }</div>
+      if(btn == "로그인"){
+        return <Link to="signin"><div key={index} className="header-btn">{ btn }</div></Link>
+      }else{
+        return <div key={index} className="header-btn">{ btn }</div>
+      }
     });
   }
 }
