@@ -25,7 +25,7 @@ class Header extends Component {
 
   renderHeaderBtn = _ => {
     return this.state.headerBtns.map((btn, index) => {
-      if(btn == "로그인"){
+      if(btn === "로그인"){
         return <Link to="signin"><div key={index} className="header-btn">{ btn }</div></Link>
       }else{
         return <div key={index} className="header-btn">{ btn }</div>

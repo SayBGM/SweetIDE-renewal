@@ -1,12 +1,13 @@
 import { EDITING_TAB_ADD, EDITING_TAB_CHANGE, CHANGE_SWEET_CODE, EDITING_TAB_REMOVE } from './types'
 
-export function EditingTabAdd(newTabsInfo){
+export function EditingTabAdd(filename,code){
   /*
     Tab을 만들때 필요한 정보를 TabInfo에 넣습니다.
   */
   return {
     type: EDITING_TAB_ADD,
-    newTabsInfo : newTabsInfo
+    filename: filename,
+    code : code
   }
 }
 

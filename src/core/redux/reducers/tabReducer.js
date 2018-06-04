@@ -5,29 +5,31 @@ const initialState = {
   Tabs: [{
     name: 'demo.sweet',
     initialcode: '#include <stdio.h>\nint main (void){\n\tint i = 0;\n}',
-    code: '#include <stdio.h>\nint main (void){\tint i = 0;\n}',
-    isSave : false
-
+    code: '#include <stdio.h>\nint main (void){\tint i = 0;\n}'
   },
   {
     name: 'test.sweet',
     initialcode: 'let scoding = "Wakanda forever"',
-    code: 'let scoding = "Wakanda forever"',
-    isSave : true
+    code: 'let scoding = "Wakanda forever"'
   },
   {
     name: 'whatthe.sweet',
     initialcode: 'let 우헤헿헤 = "Wakanda forever"',
-    code: 'let 우헤헿헤 = "Wakanda forever"',
-    isSave : true
+    code: 'let 우헤헿헤 = "Wakanda forever"'
   }
   ]
 }
 export default function tabReducer(state=initialState, action){
   switch(action.type){
     case EDITING_TAB_ADD:
+      let NewTabData = {
+        name: action.filename,
+        initialcode: action.code,
+        code: action.code
+      }
       return {...state,
-      Tabs: [...state.Tabs, action.newTabsInfo]
+      isOpen: state.Tabs.length,
+      Tabs: [...state.Tabs, NewTabData]
     }
     case EDITING_TAB_REMOVE:
         return{

@@ -1,5 +1,6 @@
 .TabBox_Container{
   display: inline-block;
-  width: 100%;
+  width: calc( 100% - 400px);
   height: auto;
+  overflow-x: hidden;
 }

@@ -10,10 +10,10 @@ class TabBox extends React.Component{
     return (
       <div className={`Tabbox TabBox--${this.props.isEdit}`} onClick={_ => this.props.EditingTabChange(this.props.index)}>
         <div className={'Tabbox__content'} >
-        <Icons icon={'file'} fontsize="18px" margin="7px"/>
-        <span>{this.props.fileName}</span>
+          <Icons icon={'file'} fontsize="18px" margin="7px"/>
+          <span className="Tabbox__name">{this.props.fileName}</span>
+          <span className='close' onClick={_ => this.props.EditingTabRemove(this.props.index)}><Icons icon={'times'}/></span>
         </div>
-        <span className='close' onClick={_ => this.props.EditingTabRemove(this.props.index)}><Icons icon={'times'}/></span>
       </div>
     )
   }

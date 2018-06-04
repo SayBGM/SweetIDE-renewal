@@ -9,7 +9,7 @@ export default class Folder extends React.Component{
   render(){
     const filedirectory = this.props.folder.subdirectory.map((file) => {
       if(file.isFile){
-        return <File file={file.filename} highfolder={file.highfolder} key={file.filename}/>
+        return <File file={file.filename} highfolder={file.highfolder} key={file.filename} code={file.code}/>
       }
       else{
         return <Folder folder={file} highfolder={file.highfolder} key={file.name}/>

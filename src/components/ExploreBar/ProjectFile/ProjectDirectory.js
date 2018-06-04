@@ -8,7 +8,7 @@ class ProjectDirectory extends React.Component{
   render(){
     const Directory = this.props.Directory.map((file) => {
       if(file.isFile){
-        return <File file={file.filename} key={file.filename} highfolder={file.highfolder}/>
+        return <File file={file.filename} key={file.filename} highfolder={file.highfolder} code={file.code}/>
       }
       else{
         return <Folder folder={file} key={file.name}/>

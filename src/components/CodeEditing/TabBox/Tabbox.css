@@ -23,9 +23,15 @@
   background-color: #fafafa;
   top:0px;
 }
+.Tabbox__name{
+  display: block;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
 .close{
-  position: relative;
-  top: -50px;
+  position: absolute;
   right: 10px;
   display: flex;
   opacity: 0;

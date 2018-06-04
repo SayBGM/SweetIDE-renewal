@@ -10,13 +10,14 @@ import './css/EditingContainer.css'
 class EditingContainer extends React.Component{
     render(){
         return(
-            <div id='center' style={{width: 'calc( 100% - 410px )' , display:'inline-block', position:'relative', top: '-10px'}}>
+            <div id='center' style={{width: 'calc( 100% - 410px )' , display:'inline-block', position:'relative', bottom: '20px'}}>
                     <span className='error'>현재 창 크기로는 정상적인 코드 에디팅이 불가능합니다. 창을 키워주세요.</span>
-                    <div className="TabBox_Container">
-                        {this.renderTabBox()}
+                    <div style={{position: 'relative', top:'8px'}}>
+                        <div className="TabBox_Container">
+                            {this.renderTabBox()}   
+                        </div>
                         <ToolBox/>
                     </div>
-                        
                 <div id={'CodeEditBlock'} style={{padding: '10px'}}>
                     <CodeMirrorCPP SelectTab={this.props.tabReducer.isOpen}/>
                 </div>
