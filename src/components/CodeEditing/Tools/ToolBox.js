@@ -7,12 +7,12 @@ export default class ToolBox extends React.Component{
     return (
       <div className="Tools" >
         <div className="ToolBox">
-         <Tool tool="toolbox"/>
+         <Tool tool="toolbox" toolname="boardcheck"/>
         </div>
         <div className="ToolBox">
-          <Tool tool="bolt"/>
+          <Tool tool="bolt" toolname="boardcheck"/>
           <div style={{marginRight:'10px'}}/>
-          <Tool tool="upload"/>
+          <Tool tool="upload" toolname="boardcheck"/>
         </div>
         <div className="ToolBox" style={{borderRight:'solid 0.3px #979797'}}>
           <Tool tool="share-alt"/>
