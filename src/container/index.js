@@ -1,4 +1,4 @@
-import SweetIDE from './SweetIDE/SweetIDE';
+import SweetIDE from './SweetIDE-Refactoring/SweetIDE';
 import DefaultLayout from './DefaultLayout/DefaultLayout';
 import Signin from './Signin/Signin';
 import Signup from './Signup/Signup';

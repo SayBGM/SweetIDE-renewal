@@ -1,77 +1,16 @@
 const initialState = 
-  [{
-    name :"base",
-    isFile: false,
-    subdirectory : [
-      {
-        filename:"test.sweet",
-        isFile: true,
-        code: '#include <stdio.h>\nint main (void)',
-        highfolder: "base"
-      }, 
-      {
-        filename:"demo.sweet",
-        isFile: true,
-        code: '#include <stdio.h>\nint main (void)',
-        highfolder: "base",
-      },
-      {
-        filename:"led_banzzack.sweet",
-        isFile: true,
-        code: '#include <stdio.h>\nint main (void)',
-        highfolder: "base",
-      }
-    ]
+[
+  {
+    filename:"test.sweet",
+    code: '#include <stdio.h>\nint main (void)'
+  }, 
+  {
+    filename:"demo.sweet",
+    code: '#include <stdio.h>\nint main (void)',
   },
   {
-  name: "base2",
-  isFile: false,
-  subdirectory : [
-    {
-      filename:"test.sweet",
-      isFile: true,
-      code: '#include <stdio.h>\nint main (void)',
-      highfolder: "base2",
-    },
-    {
-      filename:"demo.sweet",
-      isFile: true,
-      code: '#include <stdio.h>\nint main (void)',
-      highfolder: "base2",
-    },
-    {
-      name: "subfolder",
-      isFile: false,
-      highfolder: "base2",
-      subdirectory : [
-        {
-        filename: "yeah.sweet",
-        isFile: true,
-        code: '#include <stdio.h>\nint main (void)',
-        highfolder: "subfolder",
-        },
-        {
-          name: "subfolder2",
-          isFile: false,
-          highfolder: "subfolder",
-          subdirectory : [
-            {
-            filename: "yeah.sweet",
-            isFile: true,
-            code: '#include <stdio.h>\nint main (void)',
-            highfolder: "subfolder2",
-            },
-            {
-              filename: "jest.sweet",
-              isFile: true,
-              code: '#include <stdio.h>\nint main (void)',
-              highfolder: "subfolder2",
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    filename:"led_banzzack.sweet",
+    code: '#include <stdio.h>\nint main (void)',
   }
 ]
 export default function DirectoryReducer(state=initialState, action){
