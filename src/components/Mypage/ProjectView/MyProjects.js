@@ -5,11 +5,12 @@ import '../css/projectView.css';
 
 class MyProjects extends Component {
   render() {
-    const { projects, selectedProject } = this.props;
+    const { projects, selectedProject, isMore } = this.props;
     
     return (
       <React.Fragment>
         <div className="project-view-title">나의 프로젝트 ({  })</div>
+        <div id="new-project-btn" onClick={this.props.clickMoreBtn}> 새 프로젝트 </div>
         <div id="project-card-list-wrapper">
           <ProjectDetailCard selectedProject = {selectedProject}/>
           <ListView
@@ -20,6 +21,9 @@ class MyProjects extends Component {
           />        
         </div>
         {projects.length > 1 ? this.renderMoreProject() : ''}
+        <div id="more-btn" onClick={this.props.clickMoreBtn}>
+          {isMore ? '축소' : '더보기' }
+        </div>
       </React.Fragment>
     )
   }
@@ -45,9 +49,6 @@ class MyProjects extends Component {
           })
           : ''
         }
-        <div id="more-btn" onClick={this.props.clickMoreBtn}>
-          {isMore ? '축소' : '더보기' }
-        </div>
       </React.Fragment>
     )
   }

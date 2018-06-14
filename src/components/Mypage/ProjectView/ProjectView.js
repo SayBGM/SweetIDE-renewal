@@ -44,7 +44,7 @@ class ProjectView extends Component {
           isMore = {this.state.isMore}
           clickMoreBtn = {this.clickMoreBtn}
         />
-        <GroupProjects/>
+        {/* <GroupProjects/> */}
       </React.Fragment>
     )
   }
