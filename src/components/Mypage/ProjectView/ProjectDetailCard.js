@@ -17,7 +17,10 @@ const ProjectDetailCard = (props) => {
 }
 
 ProjectDetailCard.Proptypes = {
-  
+  selectedProject: {
+    title: Proptypes.string.isRequired,
+    intro: Proptypes.string.isRequired
+  }
 }
 
 export default ProjectDetailCard;

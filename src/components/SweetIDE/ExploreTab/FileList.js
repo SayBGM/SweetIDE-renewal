@@ -1,15 +1,33 @@
 import React from 'react';
+import Icon from './../../basicComponent/Icons';
 import { connect } from 'react-redux';
+import { directoryFileAdd, directoryFileChange, directoryFileRemove } from './../../../core/redux/actions/directoryAction'
 import File from './File';
 
 class FileList extends React.Component{
   render(){
-    const RenderDirectory = this.props.directory.map((file, index) => {
-      return <File key={index} name={file.filename} code={file.code} />
+    const RenderDirectory = _ => {
+      return this.props.directory.map((file, index) => {
+        return <File key={index} name={file.filename} code={file.code} />
     })
+  }
+    
     return (
       <div className="IDE__contants__Explore__FileList">
-        {RenderDirectory}
+        {RenderDirectory()}
+        <div className={this.props.addFile ? 'IDE__contants__Explore__FileList__addFile--open' : 'IDE__contants__Explore__FileList__addFile--close'}>
+          <span className="IDE__contants__Explore__FileList__addFile--open__Icon"><Icon icon="file" margin="5px" fontsize="14px"/></span>
+          <input
+            type="text"
+            onKeyPress={(e) => {
+              if(e.key === "Enter"){
+                directoryFileAdd(e.target.value)
+                this.props.toggleInput()
+              }
+            }}
+            id="addFileInput" 
+            ref={input => input && input.focus()}/>
+        </div>
       </div>
     );
   }
@@ -17,8 +35,16 @@ class FileList extends React.Component{
 
 function mapStateToProps (state) {
   return {
-    directory : state.directoryReducer
+    directory : state.directoryReducer.directory
   }
 }
 
-export default connect (mapStateToProps)(FileList);
+function mapDispatchToProps (dispatch){
+  return {
+    directoryFileAdd: (filename) => dispatch(directoryFileAdd(filename)),
+    directoryFileRemove: (deleteIndex) => dispatch(directoryFileRemove(deleteIndex)),
+    directoryFileChange: (selectIndex, filename) => dispatch(directoryFileChange(selectIndex, filename))
+  }
+}
+
+export default connect (mapStateToProps, mapDispatchToProps)(FileList);
