@@ -51,7 +51,6 @@ class CodeMirrorCPP extends React.Component {
                 )
             }  
         })
-        return;
     }
 }
 function mapStateToProps(state) {

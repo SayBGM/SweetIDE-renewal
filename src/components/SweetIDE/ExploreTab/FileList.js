@@ -21,7 +21,7 @@ class FileList extends React.Component{
             type="text"
             onKeyPress={(e) => {
               if(e.key === "Enter"){
-                directoryFileAdd(e.target.value)
+                this.props.directoryFileAdd(e.target.value)
                 this.props.toggleInput()
               }
             }}
