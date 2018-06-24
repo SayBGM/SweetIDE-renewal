@@ -4,7 +4,6 @@
   height: 50px;
   background-color: #ffffff;
   box-shadow: 0 5px 5px 0 rgba(234, 234, 234, 0.35);
-  position: fixed;
   z-index: 5;
 }
 
@@ -29,9 +28,6 @@
   height: 100%;
 }
 
-.filter {
-  flex-grow: 1;
-}
 .header-btn {
   display: inline-block;
   height: 100%;

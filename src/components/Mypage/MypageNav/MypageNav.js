@@ -5,7 +5,7 @@ import '../css/mypageNav.css';
 
 class MypageNav extends Component {
   state = {
-    buttons: ['프로젝트', '그룹관리', '정보수정']
+    buttons: ['프로젝트', '정보수정']
   }
 
   render() {

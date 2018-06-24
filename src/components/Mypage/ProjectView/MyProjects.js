@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import ListView from './ListView';
 import ProjectDetailCard from './ProjectDetailCard';
+import MyprojectBtn from './MyprojectBtn';
 import '../css/projectView.css';
 
 class MyProjects extends Component {
   render() {
-    const { projects, selectedProject } = this.props;
+    const { projects, selectedProject, isMore } = this.props;
     
     return (
-      <React.Fragment>
+      <div id="my-project-section">
         <div className="project-view-title">나의 프로젝트 ({  })</div>
+        <MyprojectBtn contents = "새 프로젝트" eventHandler = {() => {}}/>
         <div id="project-card-list-wrapper">
           <ProjectDetailCard selectedProject = {selectedProject}/>
           <ListView
@@ -20,7 +22,8 @@ class MyProjects extends Component {
           />        
         </div>
         {projects.length > 1 ? this.renderMoreProject() : ''}
-      </React.Fragment>
+        <MyprojectBtn contents = {isMore ? '축소' : '더보기' } eventHandler = {this.props.clickMoreBtn}/>
+      </div>
     )
   }
 
@@ -45,9 +48,6 @@ class MyProjects extends Component {
           })
           : ''
         }
-        <div id="more-btn" onClick={this.props.clickMoreBtn}>
-          {isMore ? '축소' : '더보기' }
-        </div>
       </React.Fragment>
     )
   }
