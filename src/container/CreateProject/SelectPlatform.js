@@ -2,26 +2,24 @@ import React, { Component } from 'react';
 import './css/createProject.css';
 
 class SelectPlatform extends Component {
-  state = {
-    next: '',
-    prev: '',
-    current: '',
-
-  }
   render() {
     return (
-      <div id="create-project-section">
-        <p>사용할 플랫폼을 선택하세요</p>
-        <div>
-          <div>
-            SweetBoard Maker U
+      <div className="select-section">
+        <p className="select-title">사용할 플랫폼을 선택하세요</p>
+        <div className="select-item-wrapper">
+          <div className="select-item"> 
+            <span>SweetBoard</span>
+            <span>Maker U</span> 
           </div>
-          <div>
-            Arduino Uno
+          <div className="select-item"> 
+            <span>Arduino</span>
+            <span>Uno</span> 
           </div>
         </div>
-        <p>단계</p>
-        <p>1/3</p>
+        <div className="show-step-wrapper">
+          <p>단계</p>
+          <p>1 / 3</p>
+        </div>
       </div>
     )
   }
