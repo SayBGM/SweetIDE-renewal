@@ -93,7 +93,7 @@
 
 #select-module-wrapper {
   width: 500px;
-  height: 60px;
+  height: 70px;
   cursor: default;
   display: flex;
   flex-direction: row;
@@ -137,4 +137,8 @@
   border: solid 1px #6d5736;
   width: 0;
   height: 100%;
+}
+
+.selected {
+  background-color: rgba(102, 79, 44, 0.12);
 }
