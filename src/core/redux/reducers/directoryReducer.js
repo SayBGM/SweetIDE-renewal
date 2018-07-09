@@ -15,8 +15,15 @@ export default function DirectoryReducer(state=initialState, action){
         filename: action.filename,
         code: ''
       }
-      return {...state,
-        directory:[...state.directory, NewFile]
+      if (NewFile.filename.indexOf(".") !== -1) {
+        return {...state,
+          directory:[...state.directory, NewFile]
+        }
+      } else {
+        NewFile.filename = NewFile.filename+".sweet"
+        return {...state,
+          directory:[...state.directory, NewFile]
+        }
       }
     case DIRECTORY_FILE_REMOVE:
       return {...state,

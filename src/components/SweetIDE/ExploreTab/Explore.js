@@ -11,7 +11,7 @@ export default class Explore extends React.Component{
   }
   render(){
     return (
-      <div className="IDE__contants__Explore" style={{width:window.screen.width*0.175, height:'40vh'}}>
+      <div className="IDE__contants__Explore" style={{width:window.screen.width*0.175, height:window.screen.height*0.4}}>
         <div className="IDE__contants__Explore__Title">
           <Icon icon="folder-open" fontsize="20px" margin="5px"/> 프로젝트 파일
           <span className="IDE__contants__Explore__Title__Plus" onClick={_ => this.toggleInput()}><Icon icon="plus" fontsize="15px"/></span>
