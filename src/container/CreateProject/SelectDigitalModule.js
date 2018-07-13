@@ -16,16 +16,16 @@ class SelectDigitalModule extends Component {
             <div className="port-line"><div className="line"></div></div>
           </div>
           <div id="select-module-wrapper">
-            <div className="moudle"></div>
-            <div className="moudle"></div>
-            <div className="moudle"></div>
-            <div className="moudle"></div>
-            <div className="moudle"></div>
+            <div className="moudle">포트 1 (클릭)</div>
+            <div className="moudle">포트 2 (클릭)</div>
+            <div className="moudle">포트 3 (클릭)</div>
+            <div className="moudle">포트 4 (클릭)</div>
+            <div className="moudle">포트 5 (클릭)</div>
           </div>
         </div>
         <div className="show-step-wrapper">
           <p>단계</p>
-          <p>3 / 3</p>
+          <p>3 / 4</p>
         </div>
       </div>
     )

@@ -18,7 +18,7 @@ class SelectProgrammingMode extends Component {
         </div>
         <div className="show-step-wrapper">
           <p>단계</p>
-          <p>2 / 3</p>
+          <p>2 / 4 </p>
         </div>
       </div>
     )

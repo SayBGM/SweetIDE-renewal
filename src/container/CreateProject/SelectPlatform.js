@@ -19,7 +19,7 @@ class SelectPlatform extends Component {
         </div>
         <div className="show-step-wrapper">
           <p>단계</p>
-          <p>1 / 3</p>
+          <p>1 / 4</p>
         </div>
       </div>
     )
