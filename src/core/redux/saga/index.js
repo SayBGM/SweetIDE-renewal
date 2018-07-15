@@ -1,22 +1,23 @@
-import { put, takeEvery, call } from 'redux-saga/effects';
-import { PERSONAL_PROJECT_LIST_SUCCESS, PERSONAL_PROJECT_LIST_FAILURE} from '../actions/actionTypes';
+import { takeEvery, fork, all } from 'redux-saga/effects';
+import { fetchProject } from './fetchDataSaga';
+import { modifyUserInfo } from './mypageSaga';
 
-function* fetchProject() {
-  const response = yield call("/project/list");
+import { 
+  PERSONAL_PROJECT_LIST_REQUEST,
+  MODIFY_USER_INFO_REQUEST
+} from '../actions/actionTypes';
 
-  if(response.status === 200) {
-    yield put({
-      type: PERSONAL_PROJECT_LIST_SUCCESS,
-      country: response.data.projectlist
-    });
-  }
-
-  yield put({
-    type: PERSONAL_PROJECT_LIST_FAILURE,
-  });
- 
+function* fetchData() {
+  yield takeEvery(PERSONAL_PROJECT_LIST_REQUEST, fetchProject);
 }
 
-export default function* rootSaga() {
-  yield takeEvery(PERSONAL_PROJECT_LIST_REQUEST, fetchProject);
+function* mypageRequest(getState) {
+  yield takeEvery(MODIFY_USER_INFO_REQUEST, modifyUserInfo, getState);
+}
+
+export default function* rootSaga(getState) {
+  yield all([
+    fork(fetchData),
+    fork(mypageRequest, getState),
+  ]);
 }

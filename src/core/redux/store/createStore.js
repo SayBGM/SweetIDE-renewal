@@ -12,4 +12,4 @@ export const store = createStore(
     applyMiddleware(sagaMiddleware)
 );
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga, store.getState);
