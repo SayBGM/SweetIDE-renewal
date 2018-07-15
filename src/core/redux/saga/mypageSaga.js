@@ -10,7 +10,7 @@ export function* modifyUserInfo(getState) {
   const response = yield call(request, '/account', {
     method: 'UPDATE',
     headers: {
-      token: getCookie(token)
+      token: getCookie('token')
     },
     body: {}
   });

@@ -10,7 +10,7 @@ export function* fetchProject() {
   const response = yield call(request, '/project/list', {
     method: 'GET',
     headers: {
-      token: getCookie(token)
+      token: getCookie('token')
     }
   });
 
