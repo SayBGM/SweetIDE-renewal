@@ -11,11 +11,10 @@ export default class Explore extends React.Component{
   }
   render(){
     return (
-      <div className="IDE__contants__Explore" style={{width:window.screen.width*0.175, height:'40vh'}}>
+      <div className="IDE__contants__Explore" style={{width:window.screen.width*0.175,height:(window.screen.height-80)*0.5}}>
         <div className="IDE__contants__Explore__Title">
-          <Icon icon="folder-open" fontsize="20px" margin="5px"/> 프로젝트 파일
-          <span className="IDE__contants__Explore__Title__Plus" onClick={_ => this.toggleInput()}><Icon icon="plus" fontsize="15px"/></span>
-          <span className="IDE__contants__Explore__Title__Close"><Icon icon="times" fontsize="15px"/></span>
+          <span className="IDE__contants__Explore__Title__Icon"><Icon icon="folder-open" fontsize="20px" margin="4px"/></span> 프로젝트 파일
+          <span className="IDE__contants__Explore__Title__Plus" onClick={_ => this.toggleInput()}>+</span>
         </div>
         <FileList addFile={this.state.isaddFileOpen} toggleInput={this.toggleInput.bind(this)}/>
       </div>
