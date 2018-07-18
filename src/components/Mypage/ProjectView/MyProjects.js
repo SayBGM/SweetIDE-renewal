@@ -46,7 +46,7 @@ class MyProjects extends Component {
               />   
             )
           })
-          : ''
+          : false
         }
       </React.Fragment>
     )

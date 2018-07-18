@@ -1,5 +1,144 @@
 #create-project-section {
   width: 100%;
   height: 700px;
-  
+  display: flex;
+  flex-direction: row;
+}
+
+.select-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.select-title {
+  margin: 0;
+  font-size: 30px;
+  height: 150px;
+  line-height: 150px;
+}
+
+.select-item-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-item {
+  width: 300px;
+  height: 200px;
+  font-size: 20px;
+  border: solid 1px #6d5736;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.select-item:hover {
+  background-color: rgba(102, 79, 44, 0.12);
+}
+
+.select-item:first-child {
+  margin-right: 200px;
+}
+
+.show-step-wrapper {
+  height: 150px;
+  font-size: 20px;
+}
+.move-page-btn-wrapper {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.move-btn {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.move-btn:hover {
+  -webkit-transform:scale(0.9); /*  크롬 */
+  -moz-transform:scale(0.9); /* FireFox */
+  -o-transform:scale(0.9); /* Opera */
+  transform:scale(0.9);
+  transition: transform .35s;
+  -o-transition: transform .35s;
+  -moz-transition: transform .35s;
+  -webkit-transition: transform .35s;
+}
+
+#board-wrapper {
+  width: 500px;
+  height: 200px;
+  border: solid 1px #6d5736;
+  border-radius: 20px;
+  cursor: default;
+}
+
+#select-board-module-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#select-module-wrapper {
+  width: 500px;
+  height: 70px;
+  cursor: default;
+  display: flex;
+  flex-direction: row;
+}
+
+.moudle {
+  flex-grow: 1;
+  border: solid 1px #6d5736;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.moudle:last-child {
+  margin: 0;
+}
+
+.moudle:hover {
+  background-color: rgba(102, 79, 44, 0.12);
+}
+
+#port-line-wrapper {
+  width: 500px;
+  height: 20px;
+  cursor: default;
+  display: flex;
+  flex-direction: row;
+}
+
+.port-line {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.port-line:last-child {
+  margin: 0;
+}
+
+.line {
+  margin: 0 auto;
+  border: solid 1px #6d5736;
+  width: 0;
+  height: 100%;
+}
+
+.selected {
+  background-color: rgba(102, 79, 44, 0.12);
 }

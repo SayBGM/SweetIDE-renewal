@@ -4,12 +4,13 @@ import { Provider } from 'react-redux';
 import { store } from './core/redux/store/createStore';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { SweetIDE, DefaultLayout, Signin, Signup, Verifi, Mypage, CreateProject } from './container/index';
+import { Main, SweetIDE, DefaultLayout, Signin, Signup, Verifi, Mypage, CreateProject } from './container/index';
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Switch>
+        <Route path='/' component={Main} exact/>
         <Route path='/ide' component={SweetIDE} exact/>
         <Route render={() => 
           <DefaultLayout>
