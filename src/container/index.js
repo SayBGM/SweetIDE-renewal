@@ -1,3 +1,4 @@
+import Main from './Main/Main';
 import SweetIDE from './SweetIDE/SweetIDE';
 import DefaultLayout from './DefaultLayout/DefaultLayout';
 import Signin from './Signin/Signin';
@@ -6,4 +7,4 @@ import Verifi from './EmailVerifi/EmailVerifi';
 import Mypage from './Mypage/Mypage';
 import CreateProject from './CreateProject/CreateProject';
 
-export { SweetIDE, DefaultLayout, Signin, Signup, Mypage, CreateProject, Verifi };
+export { Main, SweetIDE, DefaultLayout, Signin, Signup, Mypage, CreateProject, Verifi };

@@ -34,8 +34,11 @@
   line-height: 50px;
   padding-left: 15px;
   padding-right: 15px;
-  font-size: 12px;
   cursor: pointer;
+}
+
+.main-header-btn{
+  font-size: 14px;
 }
 
 .header-btn:hover {

@@ -1,0 +1,51 @@
+.Main-Explain{
+  position: relative;
+  top: -50px;
+  z-index: 3;
+}
+
+.Main-Explain-contants{
+  position: absolute;
+  right: 25px;
+  text-align: center;
+}
+
+.Main-wrapper{
+  width: 1366px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  top: 200px;
+}
+.Main-Explain-contants-Rectangle{
+  width: 32px;
+  height: 32px;
+  transform: rotate(-315deg);
+  background-color: #fffad5;
+  margin: 0 auto 75px auto;
+}
+
+.Main-Explain-contants-Title{
+  font-size: 48px;
+  color: #392d19;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.Main-Explain-contants-highlight{
+  padding: 4px;
+  background-color: #fffad5;
+}
+
+.Main-Explain-startbtn{
+  margin: 90px auto 0 auto;
+  width: 200px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #fffad5;
+  box-shadow: 0 25px 20px -15px #ffa70b;
+  font-size: 20px;
+  color: #392d19;
+  line-height: 60px;
+  cursor: pointer;
+}
