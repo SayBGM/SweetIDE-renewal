@@ -3,4 +3,13 @@
   width: 100%;
   height: calc(100% - 31px);
   border: solid 1px #979797;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &__defineadd{
+    margin: 10px 0 5px 10px;
+    &__input{
+      margin-left: 5px;
+      width: calc(100% - 75px);
+    }
+  }
 }

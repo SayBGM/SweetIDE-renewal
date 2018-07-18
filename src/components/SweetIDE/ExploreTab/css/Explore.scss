@@ -11,6 +11,7 @@
     margin-bottom: 5px;
     display: flex;
     align-items: center;
+    font-size: 17px;
     &__Icon{
       color: #5e5e5e;
     }
@@ -45,7 +46,11 @@
     overflow: auto;
     &__File{
       cursor: pointer;
+      width: 100%;
       padding: 2px 0 2px 10px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
       &.--select{
         background-color: #f2f2f2;
       }
@@ -54,7 +59,7 @@
       &--open{
         padding: 2px 0 2px 10px;
         input{
-          width: 200px;
+          width: calc(100% - 25px);
           border: #979797 0.5px solid;
           &:focus{
             outline: none;
