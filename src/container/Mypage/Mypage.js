@@ -30,7 +30,7 @@ class Mypage extends Component {
     switch(this.state.mode) {
       case 0: return <ProjectView/>
 
-      case 1: return <GroupManage/>
+      case 1: return;
       
       default: return;
     }
