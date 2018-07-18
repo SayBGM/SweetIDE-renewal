@@ -1,5 +1,53 @@
-.IDE__contants__CodeEditer{
-  border: 0.5px #979797 solid;
-  padding: 10px;
+.CodeEditer{
   float: left;
+  position: relative;
+  &__topbox{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    &__Tabs{
+      position: relative;
+      width: calc(17% - 15px);
+      height: 100%;
+      font-size: 15px;
+      color: #000;
+      line-height: 40px;
+      display: inline-block;
+      border: solid 1px #979797;
+      border-right: transparent;
+      padding-left: 15px;
+      &:last-child{
+        border-right: solid 1px #979797;
+      }
+      &.--close{
+        background-color: #fafafa;
+      }
+      &.--open{
+        background-color: #fff;
+        border-bottom: transparent;
+      }
+      &__name{
+        display: inline-block;
+        width: calc(100% - 45px);
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+      }
+      &__btn{
+        position: absolute;
+        right: 0;
+        width: 20px;
+        height: 100%;
+        font-size: 20px;
+        font-weight: 900;
+        display: inline-block;
+        opacity: 0;
+        &:hover{
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
