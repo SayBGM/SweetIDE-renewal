@@ -2,12 +2,12 @@ import { getCookie } from '../../utils/cookie';
 import { put, call } from 'redux-saga/effects';
 
 import { 
-  PERSONAL_PROJECT_LIST_SUCCESS,
-  PERSONAL_PROJECT_LIST_FAILURE
-} from '../actions/actionTypes';
+  //PERSONAL_PROJECT_LIST_SUCCESS,
+  //PERSONAL_PROJECT_LIST_FAILURE
+} from '../actions/types';
 
 export function* fetchProject() {
-  const response = yield call(request, '/project/list', {
+  /*const response = yield call(request, '/project/list', {
     method: 'GET',
     headers: {
       token: getCookie('token')
@@ -23,5 +23,5 @@ export function* fetchProject() {
 
   yield put({
     type: PERSONAL_PROJECT_LIST_FAILURE,
-  });
+  });*/
 }

@@ -5,7 +5,7 @@ import { modifyUserInfo } from './mypageSaga';
 import { 
   PERSONAL_PROJECT_LIST_REQUEST,
   MODIFY_USER_INFO_REQUEST
-} from '../actions/actionTypes';
+} from '../actions/types';
 
 export default function* rootSaga(getState) {
   yield [

@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Icon from './../../basicComponent/Icons';
+import CodeEditing from './CodeEditing';
+import Tools from './Tools/Tools';
 import './css/CodeEditer.scss';
 import './css/codemirror.css';
-import CodeEditing from './CodeEditing';
 import { EditingTabAdd, EditingTabRemove, EditingTabChange } from '../../../core/redux/actions/tabsAction';
+
 
 class CodeEditer extends React.Component{
   constructor(){
@@ -18,6 +20,7 @@ class CodeEditer extends React.Component{
       <div className="CodeEditer" style={{width:window.screen.width*0.8,height:(window.screen.height-70)}}>
         <div className="CodeEditer__topbox">
             {this.renderTabbox()}
+            <Tools />
         </div>
         <CodeEditing isOpen={this.state.isOpen} />
       </div>

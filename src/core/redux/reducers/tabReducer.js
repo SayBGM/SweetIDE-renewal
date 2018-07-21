@@ -12,12 +12,12 @@ const initialState = {
 export default function tabReducer(state=initialState, action){
   switch(action.type){
     case EDITING_TAB_ADD:
-    for(let i in state.Tabs){
+    for(let i = 0; i<state.Tabs.length; i++){
       if(state.Tabs[i].name === action.filename){
         return{...state,
           isOpen: i
         }
-      } 
+      }
     }
     let NewTabData = {
       name: action.filename,

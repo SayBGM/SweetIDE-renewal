@@ -3,9 +3,10 @@
   position: relative;
   &__topbox{
     position: absolute;
-    top: 0;
+    top: 1px;
     width: 100%;
     height: 40px;
+    z-index: 2;
     &__Tabs{
       position: relative;
       width: calc(17% - 15px);
@@ -17,15 +18,15 @@
       border: solid 1px #979797;
       border-right: transparent;
       padding-left: 15px;
-      &:last-child{
-        border-right: solid 1px #979797;
-      }
       &.--close{
         background-color: #fafafa;
       }
       &.--open{
         background-color: #fff;
         border-bottom: transparent;
+      }
+      &:last-child{
+        border-right: solid 1px #979797;
       }
       &__name{
         display: inline-block;

@@ -2,12 +2,12 @@ import { getCookie } from '../../utils/cookie';
 import { put, call } from 'redux-saga/effects';
 
 import { 
-  MODIFY_USER_INFO_SUCCESS,
-  MODIFY_USER_INFO_FAILURE
-} from '../actions/actionTypes';
+  //MODIFY_USER_INFO_SUCCESS,
+  //MODIFY_USER_INFO_FAILURE
+} from '../actions/types';
 
 export function* modifyUserInfo(getState) {
-  const response = yield call(request, '/account', {
+  /*const response = yield call(request, '/account', {
     method: 'UPDATE',
     headers: {
       token: getCookie('token')
@@ -24,5 +24,5 @@ export function* modifyUserInfo(getState) {
 
   yield put({
     type: MODIFY_USER_INFO_FAILURE,
-  });
+  });*/
 }

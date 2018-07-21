@@ -1,7 +1,6 @@
 import { DIRECTORY_FILE_ADD, DIRECTORY_FILE_REMOVE, DIRECTORY_FILE_CHANGE } from './types';
 
 export function directoryFileAdd(filename){
-  console.log(filename);
   return {
     type: DIRECTORY_FILE_ADD,
     filename: filename
