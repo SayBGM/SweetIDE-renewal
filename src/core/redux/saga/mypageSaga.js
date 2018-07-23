@@ -7,12 +7,14 @@ import {
 } from '../actions/actionTypes';
 
 export function* modifyUserInfo(getState) {
-  const response = yield call(request, '/account', {
+  const response = yield call('/account', {
     method: 'UPDATE',
     headers: {
       token: getCookie('token')
     },
-    body: {}
+    body: {
+      
+    }
   });
 
   if(response.status === 200) {
