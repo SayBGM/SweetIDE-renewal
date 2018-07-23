@@ -24,6 +24,15 @@ export default function tabReducer(state=initialState, action){
       initialcode: action.code,
       code: action.code
     }
+    if(state.Tabs.length > 3){
+      let tempTabs = state.Tabs.filter((Tab, index) => index !== 1);
+      tempTabs.push(NewTabData)
+      return {
+        ...state,
+        Tabs: tempTabs,
+        isOpen: state.Tabs.length-1
+      }
+    }
     return {...state,
       isOpen: state.Tabs.length,
       Tabs: [...state.Tabs, NewTabData]

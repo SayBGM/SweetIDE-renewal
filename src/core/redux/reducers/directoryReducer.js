@@ -57,12 +57,3 @@ export default function DirectoryReducer(state = initialState, action) {
       return state;
   }
 }
-
-function checkFileName(name, directory) {
-  for (let i = 0; i < directory.length; i++) {
-    if (name === directory[i].filename) {
-      return false;
-    }
-    return true;
-  }
-}

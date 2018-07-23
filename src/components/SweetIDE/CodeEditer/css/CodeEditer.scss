@@ -16,7 +16,6 @@
       line-height: 40px;
       display: inline-block;
       border: solid 1px #979797;
-      border-right: transparent;
       padding-left: 15px;
       &.--close{
         background-color: #fafafa;
@@ -24,9 +23,6 @@
       &.--open{
         background-color: #fff;
         border-bottom: transparent;
-      }
-      &:last-child{
-        border-right: solid 1px #979797;
       }
       &__name{
         display: inline-block;
