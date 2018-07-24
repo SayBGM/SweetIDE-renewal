@@ -2,12 +2,16 @@ import {
   CREATE_PROJECT_REQUEST,
   CREATE_PROJECT_SUCCESS,
   CREATE_PROJECT_FAILURE,
-  SET_DIGITAL_MOUDULES,
-  SET_ANALOG_MOUDULES,
   SELECT_PROJECT_PLATFORM,
   SELECT_PROJECT_PROGRAMMING_MODE,
   SELECT_PROJECT_DIGITAL_MOUDULES,
-  SELECT_PROJECT_ANALOG_MOUDULES
+  SELECT_PROJECT_ANALOG_MOUDULES,
+  FETCH_DIGITAL_MODULES_REQUEST,
+  FETCH_DIGITAL_MODULES_SUCCESS,
+  FETCH_DIGITAL_MODULES_FAILURE,
+  FETCH_ANALOG_MODULES_REQUEST,
+  FETCH_ANALOG_MODULES_SUCCESS,
+  FETCH_ANALOG_MODULES_FAILURE
 } from '../actions/types';
 
 const initialState = {
@@ -62,14 +66,40 @@ export default function DirectoryReducer(state = initialState, action){
         selectedAnalogModules: action.data
       }
     
-    case SET_DIGITAL_MOUDULES:
+    case FETCH_DIGITAL_MODULES_REQUEST: 
       return { ...state,
-        digitalModules: action.modules
+        isLoing: true
       }
 
-    case SET_ANALOG_MOUDULES:
+    case FETCH_DIGITAL_MODULES_SUCCESS: 
       return { ...state,
+        isLoing: false,
+        isError: false,
+        digitalModules: action.modules
+      }
+    
+    case FETCH_DIGITAL_MODULES_FAILURE:
+      return { ...state,
+        isLoing: false,
+        isError: true
+      }
+    
+    case FETCH_ANALOG_MODULES_REQUEST: 
+      return { ...state,
+        isLoing: true
+      }
+
+    case FETCH_ANALOG_MODULES_SUCCESS: 
+      return { ...state,
+        isLoing: false,
+        isError: false,
         analogModules: action.modules
+      }
+    
+    case FETCH_ANALOG_MODULES_FAILURE:
+      return { ...state,
+        isLoing: false,
+        isError: true
       }
 
     default:

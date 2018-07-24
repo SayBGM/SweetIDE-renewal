@@ -1,7 +1,7 @@
 import { 
   CREATE_PROJECT_REQUEST,
-  SET_DIGITAL_MOUDULES,
-  SET_ANALOG_MOUDULES,
+  FETCH_DIGITAL_MODULES_REQUEST,
+  FETCH_ANALOG_MODULES_REQUEST,
   SELECT_PROJECT_PLATFORM,
   SELECT_PROJECT_PROGRAMMING_MODE,
   SELECT_PROJECT_DIGITAL_MOUDULES,
@@ -36,17 +36,15 @@ export const selectProjectAnalogMoudules = modules => {
   }
 }
 
-export const setDigitalMoudules = modules => {
+export const fetchDigitalMoudules = _ => {
   return {
-    type: SET_DIGITAL_MOUDULES,
-    modules
+    type: FETCH_DIGITAL_MODULES_REQUEST
   }
 }
 
-export const setAnalogMoudules = modules => {
+export const fetchAnalogMoudules = _ => {
   return {
-    type: SET_ANALOG_MOUDULES,
-    modules
+    type: FETCH_ANALOG_MODULES_REQUEST
   }
 }
 

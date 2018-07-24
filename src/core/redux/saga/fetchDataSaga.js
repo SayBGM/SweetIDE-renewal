@@ -3,11 +3,15 @@ import { put, call } from 'redux-saga/effects';
 
 import { 
   PERSONAL_PROJECT_LIST_SUCCESS,
-  PERSONAL_PROJECT_LIST_FAILURE
+  PERSONAL_PROJECT_LIST_FAILURE,
+  FETCH_DIGITAL_MODULES_SUCCESS,
+  FETCH_DIGITAL_MODULES_FAILURE,
+  FETCH_ANALOG_MODULES_SUCCESS,
+  FETCH_ANALOG_MODULES_FAILURE
 } from '../actions/actionTypes';
 
 export function* fetchProject() {
-  const response = yield call(request, '/project/list', {
+  const response = yield call('/project/list', {
     method: 'GET',
     headers: {
       token: getCookie('token')
@@ -23,5 +27,35 @@ export function* fetchProject() {
 
   yield put({
     type: PERSONAL_PROJECT_LIST_FAILURE,
+  });
+}
+
+export function* fetchDigitalMoudules() {
+  const response = yield call('/project/list');
+
+  if(response.status === 200) {
+    yield put({
+      type: FETCH_DIGITAL_MODULES_SUCCESS,
+      moudules: response.data.moudules
+    });
+  }
+
+  yield put({
+    type: FETCH_DIGITAL_MODULES_FAILURE,
+  });
+}
+
+export function* fetchAnalogMoudules() {
+  const response = yield call('/project/list');
+
+  if(response.status === 200) {
+    yield put({
+      type: FETCH_ANALOG_MODULES_SUCCESS,
+      moudules: response.data.moudules
+    });
+  }
+
+  yield put({
+    type: FETCH_ANALOG_MODULES_FAILURE,
   });
 }
