@@ -3,6 +3,7 @@ import SelectPlatform from './SelectPlatform';
 import SelectProgrammingMode from './SelectProgrammingMode';
 import SelectDigitalModule from './SelectDigitalModule';
 import SelectAnalogModule from './SelectAnalogModule';
+import StartProject from './StartProject';
 import leftArrow from '../../assets/createProject/left-arrow.png';
 import rightArrow from '../../assets/createProject/right-arrow.png';
 import './css/createProject.css';
@@ -32,7 +33,7 @@ class CreateProject extends Component {
         {this.renderSelectSection()}
         <div className="move-page-btn-wrapper">
           {
-            !(next > 3) ? <img className="move-btn" src = {rightArrow} alt = "앞으로가기 버튼" onClick = {() => this.moveButtonClickHandler('NEXT')}/> : false
+            !(next > 4) ? <img className="move-btn" src = {rightArrow} alt = "앞으로가기 버튼" onClick = {() => this.moveButtonClickHandler('NEXT')}/> : false
           }
         </div>
       </div>
@@ -47,6 +48,7 @@ class CreateProject extends Component {
       case 1: return <SelectProgrammingMode selectHandler = {this.selectProjectInfo} selected = {selectedProgrammingMode} />
       case 2: return <SelectDigitalModule selectHandler = {this.selectProjectInfo} />
       case 3: return <SelectAnalogModule selectHandler = {this.selectProjectInfo} />
+      case 4: return <StartProject />
       default: return;
     }
   }

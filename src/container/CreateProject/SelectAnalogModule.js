@@ -21,7 +21,7 @@ class SelectAnalogModule extends Component {
         </div>
         <div className="show-step-wrapper">
           <p>단계</p>
-          <p>4 / 4</p>
+          <p>4 / 5</p>
         </div>
       </div>
     )

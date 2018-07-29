@@ -35,12 +35,14 @@ class Tools extends Component {
     ToastUtils.showInfoToast("SweetBoard 포트를 체크하는 중입니다...");
     axios.get('http://localhost:1601/').then(res => {
       if(res.data === 'SweetFab'){
-        axios.get('http://localhost:1601/local/getportlist').then(res => {
+        axios.get('http://localhost:1601/local/getportlist/').then(res => {
           ToastUtils.showSuccessToast('SweetBoard의 포트가 확인되었습니다.');
           return;
         })
       }
-      ToastUtils.showErrorToast('SweetClient가 꺼져있습니다.');
+      else {
+        ToastUtils.showErrorToast('SweetClient가 꺼져있습니다.');
+      }
     })
   }
 }
