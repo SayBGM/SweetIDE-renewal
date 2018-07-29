@@ -45,7 +45,6 @@ export default function DirectoryReducer(state = initialState, action) {
         directory: state.directory.filter((file, index) => index !== action.deleteIndex)
       }
     case DIRECTORY_CODE_CHANGE:
-      const directory = state.directory;
       return {
         ...state,
         directory: state.directory.map((file, index) => file.filename === action.filename ? {...file, code: action.code} : file)

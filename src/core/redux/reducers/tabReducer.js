@@ -48,7 +48,6 @@ export default function tabReducer(state=initialState, action){
         }
       
     case CHANGE_SWEET_CODE:
-      const { name, initialcode } = state.Tabs[action.SelectTab];
       return {
         ...state,
         Tabs : state.Tabs.map((Tab, index) => index === action.SelectTab ? {...Tab, code : action.changedCode} : Tab)
