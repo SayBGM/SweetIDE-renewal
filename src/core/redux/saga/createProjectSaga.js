@@ -2,11 +2,11 @@ import { getCookie } from '../../utils/cookie';
 import { put, call } from 'redux-saga/effects';
 
 import { 
-  //MODIFY_USER_INFO_SUCCESS,
-  //MODIFY_USER_INFO_FAILURE
-} from '../actions/types';
+  CREATE_PROJECT_SUCCESS,
+  CREATE_PROJECT_FAILURE
+} from '../actions/actionTypes';
 
-export function* modifyUserInfo(getState) {
+export function* createProject(getState) {
   const response = yield call('/account', {
     method: 'UPDATE',
     headers: {
@@ -17,14 +17,13 @@ export function* modifyUserInfo(getState) {
     }
   });
 
-  if(response.status === 200) {
+  if(response.status === 201) {
     yield put({
-      type: MODIFY_USER_INFO_SUCCESS,
-      country: response.data.projectlist
+      type: CREATE_PROJECT_SUCCESS
     });
   }
 
   yield put({
-    type: MODIFY_USER_INFO_FAILURE,
-  });*/
+    type: CREATE_PROJECT_FAILURE
+  });
 }
