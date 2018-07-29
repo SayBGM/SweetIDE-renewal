@@ -4,7 +4,6 @@ import Icon from './../../basicComponent/Icons';
 import CodeEditing from './CodeEditing';
 import Tools from './Tools/Tools';
 import './css/CodeEditer.scss';
-import './css/codemirror.css';
 import { EditingTabAdd, EditingTabRemove, EditingTabChange } from '../../../core/redux/actions/tabsAction';
 import {directoryCodeChange} from '../../../core/redux/actions/directoryAction';
 
