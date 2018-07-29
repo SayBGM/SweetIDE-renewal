@@ -8,7 +8,7 @@ import {
   FETCH_DIGITAL_MODULExwS_FAILURE,
   FETCH_ANALOG_MODULES_SUCCESS,
   FETCH_ANALOG_MODULES_FAILURE
-} from '../actions/actionTypes';
+} from '../actions/types';
 
 export function* fetchProject() {
   const response = yield call('/project/list', {
