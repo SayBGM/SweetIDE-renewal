@@ -2,8 +2,8 @@ import { getCookie } from '../../utils/cookie';
 import { put, call } from 'redux-saga/effects';
 
 import { 
-  //MODIFY_USER_INFO_SUCCESS,
-  //MODIFY_USER_INFO_FAILURE
+  MODIFY_USER_INFO_SUCCESS,
+  MODIFY_USER_INFO_FAILURE
 } from '../actions/types';
 
 export function* modifyUserInfo(getState) {
@@ -26,5 +26,5 @@ export function* modifyUserInfo(getState) {
 
   yield put({
     type: MODIFY_USER_INFO_FAILURE,
-  });*/
+  });
 }

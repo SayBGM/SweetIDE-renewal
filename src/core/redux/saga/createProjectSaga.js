@@ -4,7 +4,7 @@ import { put, call } from 'redux-saga/effects';
 import { 
   CREATE_PROJECT_SUCCESS,
   CREATE_PROJECT_FAILURE
-} from '../actions/actionTypes';
+} from '../actions/types';
 
 export function* createProject(getState) {
   const response = yield call('/account', {
