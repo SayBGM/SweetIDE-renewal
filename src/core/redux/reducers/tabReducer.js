@@ -3,7 +3,7 @@ import { EDITING_TAB_ADD, EDITING_TAB_REMOVE, EDITING_TAB_CHANGE, CHANGE_SWEET_C
 const initialState = {
   isOpen: 0,
   Tabs: [{
-    name: 'demo.sweet',
+    name: 'test.sweet',
     initialcode: '#include <stdio.h>\nint main (void){\n\tint i = 0;\n}',
     code: '#include <stdio.h>\nint main (void){\tint i = 0;\n}'
   }
@@ -48,12 +48,12 @@ export default function tabReducer(state=initialState, action){
         }
       
     case CHANGE_SWEET_CODE:
+      const { name, initialcode } = state.Tabs[action.SelectTab];
       return {
         ...state,
         Tabs : state.Tabs.map((Tab, index) => index === action.SelectTab ? {...Tab, code : action.changedCode} : Tab)
       }
     default:
       return state;
-      
   }
 }

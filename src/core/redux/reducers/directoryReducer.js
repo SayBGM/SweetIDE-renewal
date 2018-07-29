@@ -1,7 +1,7 @@
 import {
   DIRECTORY_FILE_ADD,
   DIRECTORY_FILE_REMOVE,
-  DIRECTORY_FILE_CHANGE
+  DIRECTORY_CODE_CHANGE
 } from './../actions/types';
 
 const initialState = {
@@ -44,14 +44,11 @@ export default function DirectoryReducer(state = initialState, action) {
       return { ...state,
         directory: state.directory.filter((file, index) => index !== action.deleteIndex)
       }
-    case DIRECTORY_FILE_CHANGE:
+    case DIRECTORY_CODE_CHANGE:
+      const directory = state.directory;
       return {
         ...state,
-        directory: {
-          [action.selectIndex]: {
-            filename: action.filename
-          }
-        }
+        directory: state.directory.map((file, index) => file.filename === action.filename ? {...file, code: action.code} : file)
       }
     default:
       return state;

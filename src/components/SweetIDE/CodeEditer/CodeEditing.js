@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
+import 'codemirror/mode/clike/clike.js'
 import { changeSweetCode } from '../../../core/redux/actions/tabsAction';
 import './css/CodeMirror.scss';
 
@@ -14,7 +15,8 @@ class CodeEditing extends React.Component{
     )
   }
   renderCodeMirror = () =>{
-    const setting = {
+    const Editers = this.props.tabReducer.Tabs;
+    const options = {
         lineNumbers: true,
         matchBrackets:true,
         lineWrapping: true,
@@ -23,28 +25,27 @@ class CodeEditing extends React.Component{
         indentUnit: 4,
         indentWithTabs: true,
         theme: "idea",
-        mode: 'cpp'
+        mode: 'text/x-c++src'
     }
-    const Editers = this.props.tabReducer.Tabs;
     return Editers.map((Editer, index) => {
         if(this.props.tabReducer.isOpen === index){
             return (
-                <div id={`CodeMirrorEditer-index${index}`} className={`CodeMirror CodeMirrorEditer-open`} key={index}>
+                <div id={`CodeMirrorEditer-index${index}`} className={`CodeMirror CodeMirrorEditer-open --${this.props.SelectTab}`} key={index}>
                     <CodeMirror
                         value={Editer.initialcode} 
-                        onChange={(editer, data, value) => {this.props.changeSweetCode(this.props.SelectTab, value)}}
-                        options={setting}
+                        onChange={(editer, data, value) => {this.props.changeSweetCode(this.props.isOpen, value)}}
+                        options={options}
                     />
                 </div>
             )
         }
         else{
             return (
-                <div id={`CodeMirrorEditer-index${index}`} className={`CodeMirror CodeMirrorEditer-close`} key={index}>
+                <div id={`CodeMirrorEditer-index${index}`} className={`CodeMirror CodeMirrorEditer-close --${this.props.SelectTab}`} key={index}>
                     <CodeMirror
                         value={Editer.initialcode} 
-                        onChange={(editer, data, value) => {this.props.changeSweetCode(this.props.SelectTab, value)}}
-                        options={setting}
+                        onChange={(editer, data, value) => {this.props.changeSweetCode(this.props.isOpen, value)}}
+                        options={options}
                     />
                 </div>
             )

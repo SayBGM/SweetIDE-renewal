@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './../../basicComponent/Icons';
 import { connect } from 'react-redux';
-import { directoryFileAdd, directoryFileChange, directoryFileRemove } from './../../../core/redux/actions/directoryAction'
+import { directoryFileAdd, directoryFileRemove } from './../../../core/redux/actions/directoryAction'
 import File from './File';
 
 class FileList extends React.Component{
@@ -43,7 +43,6 @@ function mapDispatchToProps (dispatch){
   return {
     directoryFileAdd: (filename) => dispatch(directoryFileAdd(filename)),
     directoryFileRemove: (deleteIndex) => dispatch(directoryFileRemove(deleteIndex)),
-    directoryFileChange: (selectIndex, filename) => dispatch(directoryFileChange(selectIndex, filename))
   }
 }
 

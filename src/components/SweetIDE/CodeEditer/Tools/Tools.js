@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-
-import Icon from './../../../basicComponent/Icons';
-import './css/Tools.scss';
-import ToastUtils from '../../../../core/utils/toaster/ToastUtils';
 import axios from 'axios';
+import Icon from './../../../basicComponent/Icons';
+import ToastUtils from '../../../../core/utils/toaster/ToastUtils';
+import { connect } from 'react-redux';
+import './css/Tools.scss';
+import {getPortList, changePortNumber} from '../../../../core/redux/actions/projectAction';
 
 class Tools extends Component {
   constructor() {
@@ -30,32 +31,30 @@ class Tools extends Component {
       </div>
     );
   }
-  _CheckClient() {
-    axios.get('http://localhost:1601/').then(res => {
-      return true;
-    }).catch((error) => {
-      return false;
-    })
-  }
   _CheckBoard() {
-    Promise.all([this._CheckClient(), this._CheckBoardPort()]).then((client, boardport)=> {
-      if(client && boardport){
-        ToastUtils.showSuccessToast('SweetBoard의 포트가 확인되었습니다.');
-      } else {
-        ToastUtils.showWarningToast('SweetClient가 꺼져있습니다.');
+    ToastUtils.showInfoToast("SweetBoard 포트를 체크하는 중입니다...");
+    axios.get('http://localhost:1601/').then(res => {
+      if(res.data === 'SweetFab'){
+        axios.get('http://localhost:1601/local/getportlist').then(res => {
+          ToastUtils.showSuccessToast('SweetBoard의 포트가 확인되었습니다.');
+          return;
+        })
       }
+      ToastUtils.showErrorToast('SweetClient가 꺼져있습니다.');
     })
   }
-  async _CheckBoardPort() {
-    ToastUtils.showInfoToast("SweetBoard 포트를 체크하는 중입니다...");
-    axios.get('http://localhost:1601/local/getportlist').then(res => {
-      return true;
-      }
-    ).catch((error) => {
-      ToastUtils.showErrorToast('보드가 확인되지 않습니다.');
-      return false;
-    })}
-  }
+}
  
+function mapStatetoProps(state){
+  return {
+    projectReducer: state.projectReducer
+  }
+}
 
-export default Tools;
+function mapDispatchtoProps(dispatch){
+  return {
+    getPortList: (portlist) => dispatch(getPortList(portlist)),
+    changePortNumber: (portName) => dispatch(changePortNumber(portName)),
+  }
+}
+export default connect(mapStatetoProps, mapDispatchtoProps)(Tools);

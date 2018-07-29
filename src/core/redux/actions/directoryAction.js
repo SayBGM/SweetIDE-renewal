@@ -1,4 +1,4 @@
-import { DIRECTORY_FILE_ADD, DIRECTORY_FILE_REMOVE, DIRECTORY_FILE_CHANGE } from './types';
+import { DIRECTORY_FILE_ADD, DIRECTORY_FILE_REMOVE, DIRECTORY_CODE_CHANGE } from './types';
 
 export function directoryFileAdd(filename){
   return {
@@ -14,10 +14,10 @@ export function directoryFileRemove(deleteIndex){
   }
 }
 
-export function directoryFileChange(selectIndex, filename){
+export function directoryCodeChange(filename, code){
   return {
-    type: DIRECTORY_FILE_CHANGE,
-    selectIndex: selectIndex,
-    filename: filename
+    type: DIRECTORY_CODE_CHANGE,
+    filename: filename,
+    code: code
   }
 }

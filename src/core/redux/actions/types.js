@@ -14,9 +14,16 @@ export const DIRECTORY_FILE_ADD = 'DIRECTORY_FILE_ADD';
 // 디렉토리 파일을 삭제할 때 사용
 export const DIRECTORY_FILE_REMOVE = 'DIRECTORY_FILE_REMOVE';
 
-// 디렉토리의 파일 이름을 바꿀 때 사용
-export const DIRECTORY_FILE_CHANGE = 'DIRECTORY_FILE_CHANGE';
+// 파일 저장할 때 사용
+export const DIRECTORY_CODE_CHANGE = 'DIRECTORY_CODE_CHANGE';
 
+/** Project 관리 액션 타입 모음 */
+
+// Port 설정
+export const CHANGE_PORT_NUMBER = 'CHANGE_PORT_NUMBER';
+
+// PortList 가지고 올 때 사용
+export const GET_PORT_LIST = 'GET_PORT_LIST';
 
 /** code editing Tab 액션 타입 모음 */
 
