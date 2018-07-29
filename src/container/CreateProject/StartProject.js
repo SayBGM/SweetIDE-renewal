@@ -6,6 +6,12 @@ import {getPortList} from '../../core/redux/actions/projectAction';
 import ToastUtils from '../../core/utils/toaster/ToastUtils';
 
 class StartProject extends React.Component{
+  constructor(){
+    super();
+    this.state = {
+      inProcess: false,
+    }
+  }
   render(){
     return (
       <div className="select-section">
@@ -15,12 +21,16 @@ class StartProject extends React.Component{
         <div>
           아마 석-민이 만든 애니메이션 들어갈 자리
         </div>
-        <div className="SweetClient-start" onClick={()=> this.inputList()}><a href="sweetfab://">실행하기</a></div>
+        <div className="SweetClient-start" onClick={()=> this.inputList()}>{this.state.inProcess ? '<a href="sweetfab://">1. 실행하기</a>' : '2. 포트설정'}</div>
         </div>
       </div>
     )
   }
   inputList() {
+    if(!this.state.inProcess){
+      this.setState({inProcess: true});
+      return;
+    }
     axios.get('http://localhost:1601/').then(res => {
       if(res.data === 'SweetFab'){
         axios.get('http://localhost:1601/local/getportlist/').then(res => {
@@ -31,9 +41,11 @@ class StartProject extends React.Component{
       }
       else {
         ToastUtils.showErrorToast('SweetClient가 꺼져있습니다.<br/> 다시 한번 <strong>\'실행하기\'</strong>버튼을 눌러주세요.');
+        this.setState({inProcess: false});
       }
     }).catch(err => {
       ToastUtils.showErrorToast('SweetClient가 꺼져있습니다.<br/> 다시 한번 <strong>\'실행하기\'</strong>버튼을 눌러주세요.');
+      this.setState({inProcess: false});
     })
   }
 }
