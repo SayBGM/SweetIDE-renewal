@@ -1,0 +1,43 @@
+.LibrayTab{
+  border: 0.5px #979797 solid;
+  padding: 10px;
+  background-color: #FFF;
+  &__title{
+    position: relative;
+    width: 100%;
+    height: 26px;
+    font-size: 16px;
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    font-size: 17px;
+    &__icon{
+      color: #5e5e5e;
+    }
+    &__plus{
+      position: absolute;
+      right: 0;
+      color: #5e5e5e;
+      font-size: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover{
+        &::after{
+          display: block;
+          position: absolute;
+          content: '상수 추가';
+          top: 35px;
+          right: 0;
+          width: 75px;
+          height: 20px;
+          font-size: 10px;
+          background-color: #ffffff;
+          border: solid 0.3px #979797;
+          text-align: center;
+          line-height: 20px;
+          color: #5e5e5e;
+        }
+      }
+    }
+  }
+}

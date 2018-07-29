@@ -9,7 +9,7 @@ import {
   FETCH_DIGITAL_MODULES_REQUEST,
   FETCH_ANALOG_MODULES_REQUEST,
   CREATE_PROJECT_REQUEST
-} from '../actions/actionTypes';
+} from '../actions/types';
 
 export default function* rootSaga(getState) {
   yield [

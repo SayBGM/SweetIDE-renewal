@@ -1,5 +1,5 @@
+import SweetIDE from './SweetIDE-Refactoring/SweetIDE';
 import Main from './Main/Main';
-import SweetIDE from './SweetIDE/SweetIDE';
 import DefaultLayout from './DefaultLayout/DefaultLayout';
 import Signin from './Signin/Signin';
 import Signup from './Signup/Signup';

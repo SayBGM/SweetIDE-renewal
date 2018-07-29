@@ -22,10 +22,10 @@
   width: 30px;
 }
 
-.fa-check {
+.contents-icon .fa-check {
   color: #3f9334;
 }
 
-.fa-times{
+.contents-icon .fa-times{
   color : #d34444;
 }

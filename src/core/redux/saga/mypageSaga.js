@@ -4,7 +4,7 @@ import { put, call } from 'redux-saga/effects';
 import { 
   MODIFY_USER_INFO_SUCCESS,
   MODIFY_USER_INFO_FAILURE
-} from '../actions/actionTypes';
+} from '../actions/types';
 
 export function* modifyUserInfo(getState) {
   const response = yield call('/account', {

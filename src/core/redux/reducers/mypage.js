@@ -6,7 +6,7 @@ import {
   MODIFY_USER_INFO_REQUEST,
   MODIFY_USER_INFO_SUCCESS,
   MODIFY_USER_INFO_FAILURE,
-  SELECT_PERSONAL_PROJECT
+  //SELECT_PERSONAL_PROJECT,
 } from '../actions/types';
 
 const initialState = {
@@ -62,7 +62,7 @@ export default function DirectoryReducer(state = initialState, action){
     
     case SELECT_PERSONAL_PROJECT:
       return { ...state,
-        selectedPersonalProject: actions.id
+        selectedPersonalProject: action.id
       }
 
     case MODIFY_USER_INFO_REQUEST:

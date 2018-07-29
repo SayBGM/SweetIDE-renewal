@@ -3,31 +3,37 @@ import { EDITING_TAB_ADD, EDITING_TAB_REMOVE, EDITING_TAB_CHANGE, CHANGE_SWEET_C
 const initialState = {
   isOpen: 0,
   Tabs: [{
-    name: 'demo.sweet',
+    name: 'test.sweet',
     initialcode: '#include <stdio.h>\nint main (void){\n\tint i = 0;\n}',
     code: '#include <stdio.h>\nint main (void){\tint i = 0;\n}'
-  },
-  {
-    name: 'test.sweet',
-    initialcode: 'let scoding = "Wakanda forever"',
-    code: 'let scoding = "Wakanda forever"'
-  },
-  {
-    name: 'whatthe.sweet',
-    initialcode: 'let 우헤헿헤 = "Wakanda forever"',
-    code: 'let 우헤헿헤 = "Wakanda forever"'
   }
   ]
 }
 export default function tabReducer(state=initialState, action){
   switch(action.type){
     case EDITING_TAB_ADD:
-      let NewTabData = {
-        name: action.filename,
-        initialcode: action.code,
-        code: action.code
+    for(let i = 0; i<state.Tabs.length; i++){
+      if(state.Tabs[i].name === action.filename){
+        return{...state,
+          isOpen: i
+        }
       }
-      return {...state,
+    }
+    let NewTabData = {
+      name: action.filename,
+      initialcode: action.code,
+      code: action.code
+    }
+    if(state.Tabs.length > 3){
+      let tempTabs = state.Tabs.filter((Tab, index) => index !== 1);
+      tempTabs.push(NewTabData)
+      return {
+        ...state,
+        Tabs: tempTabs,
+        isOpen: state.Tabs.length-1
+      }
+    }
+    return {...state,
       isOpen: state.Tabs.length,
       Tabs: [...state.Tabs, NewTabData]
     }
@@ -48,6 +54,5 @@ export default function tabReducer(state=initialState, action){
       }
     default:
       return state;
-      
   }
 }

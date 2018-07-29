@@ -6,43 +6,24 @@ export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 //로그인 토큰을 store에 저장할 때 사용
 export const CLEAR_AUTH_TOKEN = 'CLEAR_AUTH_TOKEN';
 
-/** project 액션 타입 모음 */
+/** project Directory 액션 타입 모음 */
 
-// API 서버의 프로젝트 정보 생성 API를 호출 했을 때 사용
-export const CREATE_PROJECT_REQUEST = 'CREATE_PROJECT_REQUEST';
+// 디렉토리에 파일을 추가할 때 사용
+export const DIRECTORY_FILE_ADD = 'DIRECTORY_FILE_ADD';
 
-// 프로젝트 정보 생성 API 결과값을 성공적으로 받았을 때 사용
-export const CREATE_PROJECT_SUCCESS = 'CREATE_PROJECT_SUCCESS';
+// 디렉토리 파일을 삭제할 때 사용
+export const DIRECTORY_FILE_REMOVE = 'DIRECTORY_FILE_REMOVE';
 
-// 프로젝트 정보 생성 API 호출에 실패하거나 결과값이 성공이 아닌 경우 사용
-export const CREATE_PROJECT_FAILURE = 'CREATE_PROJECT_FAILURE';
+// 파일 저장할 때 사용
+export const DIRECTORY_CODE_CHANGE = 'DIRECTORY_CODE_CHANGE';
 
-// API 서버의 프로젝트 정보 읽기 API를 호출 했을 때 사용
-export const READ_PROJECT_REQUEST = 'READ_PROJECT_REQUEST';
+/** Project 관리 액션 타입 모음 */
 
-// 프로젝트 정보 읽기 API 결과값을 성공적으로 받았을 때 사용
-export const READ_PROJECT_SUCCESS = 'READ_PROJECT_SUCCESS';
+// Port 설정
+export const CHANGE_PORT_NUMBER = 'CHANGE_PORT_NUMBER';
 
-// 프로젝트 정보 읽기 API 호출에 실패하거나 결과값이 성공이 아닌 경우 사용
-export const READ_PROJECT_FAILURE = 'READ_PROJECT_FAILURE';
-
-// API 서버의 프로젝트 정보 수정 API를 호출 했을 때 사용
-export const UPDATE_PROJECT_REQUEST = 'UPDATE_PROJECT_REQUEST';
-
-// 프로젝트 정보 수정 API 결과값을 성공적으로 받았을 때 사용
-export const UPDATE_PROJECT_SUCCESS = 'UPDATE_PROJECT_SUCCESS';
-
-// 프로젝트 정보 수정 API 호출에 실패하거나 결과값이 성공이 아닌 경우 사용
-export const UPDATE_PROJECT_FAILURE = 'UPDATE_PROJECT_FAILURE';
-
-// API 서버의 프로젝트 정보 삭제 API를 호출 했을 때 사용
-export const DELETE_PROJECT_REQUEST = 'DELETE_PROJECT_REQUEST';
-
-// 프로젝트 정보 삭제 API 결과값을 성공적으로 받았을 때 사용
-export const DELETE_PROJECT_SUCCESS = 'DELETE_PROJECT_SUCCESS';
-
-// 프로젝트 정보 삭제 API 호출에 실패하거나 결과값이 성공이 아닌 경우 사용
-export const DELETE_PROJECT_FAILURE = 'DELETE_PROJECT_FAILURE';
+// PortList 가지고 올 때 사용
+export const GET_PORT_LIST = 'GET_PORT_LIST';
 
 /** code editing Tab 액션 타입 모음 */
 
@@ -56,9 +37,6 @@ export const EDITING_TAB_REMOVE = 'EDITING_TAB_REMOVE';
 export const EDITING_TAB_CHANGE = 'EDITING_TAB_CHANGE';
 
 /** code 액션 타입 모음 */
-
-//IDE 최초 로드시 코드미러에 프로젝트의 코드 데이터를 세팅하기 위해서 사용
-export const INIT_SWEET_CODE = 'INIT_SWEET_CODE';
 
 //코드미러의 코드 데이터가 변경되었을 경우 사용
 export const CHANGE_SWEET_CODE = 'CHANGE_SWEET_CODE';

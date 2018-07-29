@@ -1,0 +1,24 @@
+.IDE__Navigation{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #FFF;
+  border-bottom: solid 0.3px #979797;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__Exit{
+    position: absolute;
+    left: 50px;
+    cursor: pointer;
+  }
+  &__UserName{
+    position: absolute;
+    right: 50px;
+    
+  }
+  &__ProjectName{
+    font-size: 25px;
+  }
+}
