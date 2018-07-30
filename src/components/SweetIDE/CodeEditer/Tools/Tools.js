@@ -32,16 +32,17 @@ class Tools extends Component {
         let portlist = res.data.com;
         if(Originportlist.length >= portlist.length){
           this.props.getPortList(portlist);
-          ToastUtils.showErrorToast('SweetBoard를 꽂아주세요.');
+          ToastUtils.showErrorToast('SweetBoard를 꽂아주세요.<br/>이미 꽂혀있다면 빼신 후 새로고침(F5)을 해주세요.');
+          this.props.changePortNumber('');
           return;
-        } else if(Originportlist.length+1 === portlist.length){
+        } else if(Originportlist.length+1 === portlist.length || this.props.projectReducer.port){
           this.props.changePortNumber(portlist[portlist.length-1]);
           this.props.getPortList(portlist);
           axios.post('http://localhost:1601/local/setport/',{
             com: portlist[portlist.length-1]
           }).then(res => {
             if(res.status === 400 & res.data.reason === 1){
-              ToastUtils.showErrorToast('SweetBoard를 꽂아주세요.');
+              ToastUtils.showErrorToast('SweetBoard를 꽂아주세요.<br/>');
               return;
             } else if(res.status === 400 & res.data.reason === 2){
               ToastUtils.showErrorToast('지원하지 않는 작업입니다. SweetIDE에 문의 바랍니다.');
