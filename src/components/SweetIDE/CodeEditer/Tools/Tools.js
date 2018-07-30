@@ -26,7 +26,7 @@ class Tools extends Component {
     );
   }
   _CheckPort() {
-    let { Originportlist } = this.props.projectReducer;
+    let Originportlist = this.props.projectReducer.portlist;
     ToastUtils.showInfoToast("SweetBoard 포트를 체크하는 중입니다...");
       axios.get('http://localhost:1601/local/getportlist/').then(res => {
         let portlist = res.data.com;
@@ -35,27 +35,33 @@ class Tools extends Component {
           ToastUtils.showErrorToast('SweetBoard를 꽂아주세요.');
           return;
         } else if(Originportlist.length+1 === portlist.length){
-          this.props.changePortNumber(portlist[portlist.length]);
+          this.props.changePortNumber(portlist[portlist.length-1]);
+          this.props.getPortList(portlist);
           axios.post('http://localhost:1601/local/setport/',{
-            com: portlist[portlist.length]
+            com: portlist[portlist.length-1]
           }).then(res => {
             if(res.status === 400 & res.data.reason === 1){
               ToastUtils.showErrorToast('SweetBoard를 꽂아주세요.');
+              return;
             } else if(res.status === 400 & res.data.reason === 2){
               ToastUtils.showErrorToast('지원하지 않는 작업입니다. SweetIDE에 문의 바랍니다.');
+              return;
             } else if(res.status === 409 & res.data.reason === 3){
               ToastUtils.showErrorToast('다른 프로그램에 의해 포트가 사용중입니다.<br/> 해당 프로그램을 종료해주세요.');
+              return;
             } else if(res.status === 409 & res.data.reason === 4){
               ToastUtils.showErrorToast('포트의 입출력 에러입니다. SweetIDE에 문의 바랍니다.');
+              return;
             }
           })
           ToastUtils.showSuccessToast('SweetBoard의 포트가 확인되었습니다.');
+          return;
         } else if(Originportlist.length+1 < portlist.length){
           this.props.getPortList(portlist);
           ToastUtils.showErrorToast('SweetBoard를 연결 해제 후 다시 보드확인 도구를 실행해주세요.');
+        } else {
+          ToastUtils.showErrorToast('클라이언트가 꺼져있습니다.<br/> 클라이언트 재실행이 필요합니다.<br/> <a href="sweetfab://">실행하기</a>');
         }
-    }).catch(err => {
-      ToastUtils.showErrorToast('클라이언트가 꺼져있습니다.<br/> 클라이언트 재실행이 필요합니다.<br/> <a href="sweetfab://">실행하기</a>');
     })
   }
 }

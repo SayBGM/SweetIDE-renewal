@@ -6,13 +6,14 @@ const initialState = {
     projectId: '91006',
     projectName: 'HelloWorld',
     lastUploadedTime: 1805091919,
-    portlist: null,
-    port: null,
+    portlist: [],
+    port: '',
 }
 
 export default function projectReducer(state=initialState, action){
   switch (action.type) {
     case GET_PORT_LIST:
+      state.portlist= [];
       return {
         ...state,
         portlist: action.portlist,

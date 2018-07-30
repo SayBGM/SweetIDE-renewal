@@ -4,7 +4,7 @@ import { UnControlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/mode/clike/clike.js'
 import { changeSweetCode } from '../../../core/redux/actions/tabsAction';
 import './css/CodeEditing.scss';
-import './css/codemirror.scss';
+import './css/CodeMirror.scss';
 
 
 class CodeEditing extends React.Component{
