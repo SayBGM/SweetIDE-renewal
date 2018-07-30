@@ -132,7 +132,6 @@
   white-space: nowrap;
 }
 
-.CodeMirror-linenumbers {}
 
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
@@ -219,7 +218,6 @@
 
 /* Can style cursor different in overwrite (non-insert) mode */
 
-.CodeMirror-overwrite .CodeMirror-cursor {}
 
 .cm-tab {
   display: inline-block;
@@ -290,7 +288,6 @@
   .cm-def {
     color: #00f;
   }
-  .cm-variable, .cm-punctuation, .cm-property, .cm-operator {}
   .cm-variable-2 {
     color: #05a;
   }
@@ -514,7 +511,6 @@ div.CodeMirror span {
   overflow: auto;
 }
 
-.CodeMirror-widget {}
 
 .CodeMirror-rtl pre {
   direction: rtl;
