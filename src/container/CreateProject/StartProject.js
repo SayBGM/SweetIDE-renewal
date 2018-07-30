@@ -21,7 +21,7 @@ class StartProject extends React.Component{
         <div>
           아마 석-민이 만든 애니메이션 들어갈 자리
         </div>
-        <div className="SweetClient-start" onClick={()=> this.inputList()}>{this.state.inProcess ? '<a href="sweetfab://">1. 실행하기</a>' : '2. 포트설정'}</div>
+        <div className="SweetClient-start" onClick={()=> this.inputList()}>{this.state.inProcess ? '2. 포트설정' : <a href="sweetfab://">1. 실행하기</a>}</div>
         </div>
       </div>
     )
