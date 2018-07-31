@@ -3,11 +3,16 @@ import Icons from '../../basicComponent/Icons';
 import './css/SirialMoniter.scss';
 
 class SirialMoniter extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      msgs: []
+    }
+  }
   componentDidMount(){
     const {socket} = this.props;
-    socket.onmessage = function(event){
-      const moniter = document.getElementById('SiralMoniterContents');
-      moniter.innerText(`<p class="SirialMoniter__contents__msg">${event.data}</p>`)
+    socket.onmessage = (event) => {
+      this.setState({msgs:  this.state.msgs.concat([ event.data ])})
     }
   };
   render() { 
@@ -16,10 +21,18 @@ class SirialMoniter extends React.Component {
         <span className="SirialMoniter__title"><Icons icon="desktop" size="20px" margin="5px"/><span className="SirialMoniter__title--text">시리얼 모니터</span></span>
         <span className="SirialMoniter__close" onClick={()=>this.props.ChangeSiral()}><Icons icon="times" size="30px"/></span>
         <div className="SirialMoniter__contents" id="SiralMoniterContents">
-          
+          {this.RenderMsg()}
         </div>
       </div>
     );
+  }
+  RenderMsg(){
+    const {msgs} = this.state;
+    msgs.map(msg => {
+      return (
+        <p class="SirialMoniter__contents__msg">{msg.data}</p>
+      )
+    })
   }
 }
  
