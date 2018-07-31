@@ -5,10 +5,10 @@ import './css/Navigation.scss';
 
 class Navigation extends React.Component{
   render(){
-    const {projectName, userName} = this.props
+    const {projectName, userName, changeIsFull} = this.props
     return(
       <div className="IDE__Navigation">
-        <span className="IDE__Navigation__Exit">
+        <span className="IDE__Navigation__Exit" onClick={()=> changeIsFull()}>
           나가기
         </span>
         <span className="IDE__Navigation__ProjectName">

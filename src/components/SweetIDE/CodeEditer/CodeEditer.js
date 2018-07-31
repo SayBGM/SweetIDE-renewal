@@ -6,6 +6,7 @@ import Tools from './Tools/Tools';
 import './css/CodeEditer.scss';
 import { EditingTabAdd, EditingTabRemove, EditingTabChange } from '../../../core/redux/actions/tabsAction';
 import {directoryCodeChange} from '../../../core/redux/actions/directoryAction';
+import SirialMoniter from '../SirialMoniter/SirialMoniter';
 
 
 class CodeEditer extends React.Component{
@@ -13,18 +14,29 @@ class CodeEditer extends React.Component{
     super();
     this.state = {
       isOpen: false,
+      SirialOpen: false,
     };
   }
   render(){
+    const {SirialOpen} = this.state;
+    const {socket} = this.props;
     return(
-      <div className="CodeEditer" style={{width:window.screen.width*0.8,height:(window.screen.height-70)}}>
-        <div className="CodeEditer__topbox">
-            {this.renderTabbox()}
-            <Tools />
+      <React.Fragment>
+        <div className="CodeEditer" style={{width:window.screen.width*0.8,height:SirialOpen ? (window.screen.height-80) / 2:(window.screen.height-70)}}>
+          <div className="CodeEditer__topbox">
+              {this.renderTabbox()}
+              <Tools ChangeSiral={this.ChangeSiral.bind(this)}/>
+          </div>
+          <CodeEditing isOpen={this.props.tabReducer.isOpen} />
         </div>
-        <CodeEditing isOpen={this.props.tabReducer.isOpen} />
-      </div>
+        {SirialOpen ? 
+          <SirialMoniter socket={socket} ChangeSiral={this.ChangeSiral.bind(this)}/>
+          : ''}
+      </React.Fragment>
     )
+  }
+  ChangeSiral() {
+    this.setState({SirialOpen: !this.state.SirialOpen})
   }
   renderTabbox() {
     const Tabs = this.props.tabReducer.Tabs;

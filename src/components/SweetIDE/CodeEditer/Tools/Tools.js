@@ -11,7 +11,7 @@ class Tools extends Component {
     return ( 
       <div className="Tools">
         <div className="Tools__box">
-          <div className="Tools__box__tool --sirial"><Icon icon="desktop" size="20px"/></div>
+          <div className="Tools__box__tool --sirial" onClick={()=>this.props.ChangeSiral()}><Icon icon="desktop" size="20px"/></div>
           <div className="Tools__box__tool --tool" onClick={()=> this._CheckPort()}><Icon icon="toolbox" size="20px"/></div>
         </div>
         <div className="Tools__box">
@@ -26,6 +26,7 @@ class Tools extends Component {
     );
   }
   _CheckPort() {
+    this.props.ChangeSiral();
     let Originportlist = this.props.projectReducer.portlist;
     ToastUtils.showInfoToast("SweetBoard 포트를 체크하는 중입니다...");
       axios.get('http://localhost:1601/local/getportlist/').then(res => {

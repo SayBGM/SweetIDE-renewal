@@ -17,6 +17,7 @@ class SweetIDE extends React.Component{
     this.state = {
       isFull: false,
       isProcess: false,
+      socket: new WebSocket('ws://localhost:1601/local/serial/')
     };
   }
   goFull = () => {
@@ -26,8 +27,7 @@ class SweetIDE extends React.Component{
     axios.get('http://localhost:1601/').then(res => {
       if(res.data === "SweetFab"){
         this.setState({isProcess: true});
-        const socket = new WebSocket('ws://localhost:1601/local/serial/');
-        socket.onopen = function(event) {
+        this.state.socket.onopen = function(event) {
           console.log('WebSocket is connected.');
         };
         axios.get('http://localhost:1601/local/getportlist/').then(res => {
@@ -60,13 +60,13 @@ class SweetIDE extends React.Component{
         }
         <Fullscreen enabled={isFull} onChange={isFull => this.setState({isFull})}>
           <div className="SweetIDE" style={{width:window.screen.width, height:'100%'}}>
-            <Navigation />
+            <Navigation changeIsFull={this.changeIsFull.bind(this)}/>
               <div className="SweetIDE__contants">
                 <div style={{float:'left'}}>
                   <Explore />
                   <LibraryTab />
                 </div>
-                <CodeEditer />
+                <CodeEditer socket={this.state.socket}/>
               </div>
           </div>
         </Fullscreen>
@@ -77,6 +77,9 @@ class SweetIDE extends React.Component{
         }
       </div>
     )
+  }
+  changeIsFull(){
+    this.setState({isFull: false})
   }
 }
 

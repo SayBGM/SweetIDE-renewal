@@ -1,0 +1,29 @@
+.SirialMoniter{
+  background-color: #ffffff;
+  border: solid 0.3px #979797;
+  display: block;
+  float: left;
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  &__title{
+    line-height: 25px;
+    color: #5e5e5e;
+    font-size: 17px;
+    &--text{
+      color: #000;
+    }
+  }
+  &__close{
+    position: absolute;
+    right: 15px;
+    color: #5e5e5e;
+    cursor: pointer;
+  }
+  &__contents{
+    background-color: #1d1d1d;
+    margin-top: 5px;
+    width: 100%;
+    height: calc(100% - 33px);
+  }
+}
