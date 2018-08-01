@@ -9,9 +9,14 @@ class SirialMoniter extends React.Component {
       msgs: []
     }
   }
+  componentDidUpdate() {
+    const objDiv = document.getElementById('SiralMoniterContents');
+    objDiv.scrollTop = objDiv.scrollHeight;
+  }
   componentDidMount(){
     const {socket} = this.props;
     socket.onmessage = (event) => {
+      console.log(event.data);
       this.setState({msgs:  this.state.msgs.concat([ event.data ])})
     }
   };
@@ -19,7 +24,7 @@ class SirialMoniter extends React.Component {
     return (
       <div className="SirialMoniter" style={{width:window.screen.width*0.8,height:(window.screen.height-80)/2}}>
         <span className="SirialMoniter__title"><Icons icon="desktop" size="20px" margin="5px"/><span className="SirialMoniter__title--text">시리얼 모니터</span></span>
-        <span className="SirialMoniter__close" onClick={()=>this.props.ChangeSiral()}><Icons icon="times" size="30px"/></span>
+        <span className="SirialMoniter__close" onClick={()=>this.props.ChangeSirial()}><Icons icon="times" size="30px"/></span>
         <div className="SirialMoniter__contents" id="SiralMoniterContents">
           {this.RenderMsg()}
         </div>
@@ -28,12 +33,13 @@ class SirialMoniter extends React.Component {
   }
   RenderMsg(){
     const {msgs} = this.state;
-    msgs.map(msg => {
+    return msgs.map(msg => {
       return (
-        <p class="SirialMoniter__contents__msg">{msg.data}</p>
+        <p class="SirialMoniter__contents__msg">{msg}</p>
       )
     })
   }
+  
 }
  
 export default SirialMoniter;

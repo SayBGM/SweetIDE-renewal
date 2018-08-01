@@ -25,5 +25,11 @@
     margin-top: 5px;
     width: 100%;
     height: calc(100% - 33px);
+    padding: 10px;
+    overflow-y: auto;
+    &__msg{
+      font-family: monospace;
+      color: #FFF;
+    }
   }
 }

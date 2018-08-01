@@ -25,18 +25,21 @@ class CodeEditer extends React.Component{
         <div className="CodeEditer" style={{width:window.screen.width*0.8,height:SirialOpen ? (window.screen.height-80) / 2:(window.screen.height-70)}}>
           <div className="CodeEditer__topbox">
               {this.renderTabbox()}
-              <Tools ChangeSiral={this.ChangeSiral.bind(this)}/>
+              <Tools ChangeSirial={this.ChangeSirial.bind(this)} onSirial={this.onSirial.bind(this)}/>
           </div>
           <CodeEditing isOpen={this.props.tabReducer.isOpen} />
         </div>
         {SirialOpen ? 
-          <SirialMoniter socket={socket} ChangeSiral={this.ChangeSiral.bind(this)}/>
+          <SirialMoniter socket={socket} ChangeSirial={this.ChangeSirial.bind(this)}/>
           : ''}
       </React.Fragment>
     )
   }
-  ChangeSiral() {
-    this.setState({SirialOpen: !this.state.SirialOpen})
+  ChangeSirial() {
+    this.setState({SirialOpen: !this.state.SirialOpen});
+  }
+  onSirial(){
+    this.setState({SirialOpen: true});
   }
   renderTabbox() {
     const Tabs = this.props.tabReducer.Tabs;
