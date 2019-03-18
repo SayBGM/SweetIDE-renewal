@@ -6,6 +6,44 @@
   &__contants{
     padding: 10px;
   }
+  &__Error{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: #fafafa;
+    justify-content: center;
+    align-items: center;
+    font-family: 'NanumSquare';
+    opacity: 0.9;
+    &__wrapper{
+      position: absolute;
+      z-index: 10;
+      &__title{
+        display: block;
+        font-size: 50px;
+        font-weight: 700;
+        color: #634c28;
+        text-align: center;
+      }
+      &__Explain{
+        margin: 50px;
+        font-size: 25px;
+        display: block;
+        color: #392d19;
+        text-align: center;
+      }
+      &__Link{
+        text-align: center;
+      }
+    }
+      &__animation{
+        width: 50vw;
+      }
+  }
 }
 .fullscreen__alert{
   position: fixed;

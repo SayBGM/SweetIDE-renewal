@@ -1,4 +1,6 @@
 import React from 'react';
+import Lottie from 'react-lottie';
+import * as animationData from './../../assets/Lottie/SignIn.json';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import Fullscreen from 'react-full-screen';
@@ -17,7 +19,12 @@ class SweetIDE extends React.Component{
     this.state = {
       isFull: false,
       isProcess: false,
-      socket: new WebSocket('ws://localhost:1601/local/serial/')
+      socket: new WebSocket('ws://localhost:1601/local/serial/'),
+      defaultOptions: {
+        loop: true,
+        autoplay: true, 
+        animationData: animationData,
+      },
     };
   }
   goFull = () => {
@@ -47,15 +54,22 @@ class SweetIDE extends React.Component{
     })
   }
   render(){
-    const {isFull, isProcess} = this.state;
+    const {isFull, isProcess, defaultOptions} = this.state;
     return(
       <div style={{height:'100%'}}>
         {isProcess ? '' : 
           <div className="SweetIDE__Error">
-            <span>SweetClient 실행</span>
-            <span>원활한 SweetIDE 환경을 구축하기 위해 SweetClient 실행이 필요합니다.<br/> 아래 '실행하기'버튼을 눌러 SweetClient를 실행시켜주세요.</span>
-            <a href="sweetfab://">실행하기</a>
-            
+            <div id="SweetIDE__Error__wrapper__animation">
+              <Lottie 
+                options={defaultOptions}
+                isClickToPauseDisabled={true}
+              />
+            </div>
+            <div className="SweetIDE__Error__wrapper">
+              <span className="SweetIDE__Error__wrapper__title">SweetClient 실행</span>
+              <span className="SweetIDE__Error__wrapper__Explain">원활한 SweetIDE 환경을 구축하기 위해 SweetClient 실행이 필요합니다.<br/> 아래 '실행하기' 버튼을 눌러 SweetClient를 실행시켜주세요.</span>
+              <span className="SweetIDE__Error__wrapper__Link"><a className="SweetIDE__Error__wrapper__btn" href="sweetfab://">실행하기</a> <a href="#">다운로드</a></span>
+            </div>
           </div>
         }
         <Fullscreen enabled={isFull} onChange={isFull => this.setState({isFull})}>

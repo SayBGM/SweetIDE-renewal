@@ -3,7 +3,7 @@ import Proptypes from 'prop-types';
 import './css/accountSubmitBtn.css';
 
 const AccountSubmitBtn = ({ text }) => {
-  return <div id="account-submit-btn">{text}</div>
+  return <button type="submit" id="account-submit-btn">{text}</button>
 }
 
 AccountSubmitBtn.Proptypes = {

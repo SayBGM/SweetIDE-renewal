@@ -37,7 +37,7 @@ export default function DirectoryReducer(state = initialState, action){
       return { ...state,
         isLoing: false,
         isError: false,
-        projects: action.projectlist
+        projects: action.projectlist32``
       }
     
     case CREATE_PROJECT_FAILURE:

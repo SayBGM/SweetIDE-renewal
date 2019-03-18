@@ -27,6 +27,7 @@
     "file-loader": "0.11.2",
     "forever": "^0.15.3",
     "fs-extra": "3.0.1",
+    "globals": "^11.7.0",
     "html-webpack-plugin": "2.29.0",
     "immutable": "^3.8.2",
     "isomorphic-fetch": "^2.2.1",

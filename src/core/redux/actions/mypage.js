@@ -1,4 +1,4 @@
-import { PERSONAL_PROJECT_LIST_REQUEST, MODIFY_USER_INFO_REQUEST } from '../actions/types';
+import { SELECT_PERSONAL_PROJECT, PERSONAL_PROJECT_LIST_REQUEST, MODIFY_USER_INFO_REQUEST } from '../actions/types';
 
 export const selectPersonalProject = projectId => {
   return {
